@@ -14,12 +14,6 @@ jobs:
       - name: Checkout sig-cloud-instance-images
         uses: actions/checkout@v2
 
-      - name: Checkout kickstart repository
-        uses: actions/checkout@v2
-        with:
-          path: kickstarts
-          repository: https://git.rockylinux.org/rocky/kickstarts.git
-
       - name: Build images
         run: pushd . && cd kickstarts && checkout r8 && popd && make
 

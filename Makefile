@@ -33,13 +33,9 @@ clean:
 	-rm *.meta 
 
 $(KICKSTART_DIR):
-	git clone ssh://git@git.rockylinux.org:22220/rocky/kickstarts.git kickstarts
-	cd kickstarts && git checkout r${RELEASE_VER}
+	git clone --branch r$(MAJOR) --single-branch ssh://git@git.rockylinux.org:22220/rocky/kickstarts.git kickstarts
 
-$(KICKSTART_PATH): $(KICKSTART_DIR)
-	@echo I\'d do things here
-
-$(BASEIMAGE_META):
+$(BASEIMAGE_META): $(KICKSTART_DIR)
 	sudo imagefactory $(DEBUGPARAM) base_image \
 		--parameter offline_icicle true \
 		--file-parameter install_script ${KICKSTART_PATH} \
