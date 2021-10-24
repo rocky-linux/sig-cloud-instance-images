@@ -28,5 +28,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: rocky-${{ matrix.architecture }}.tar.xz
-          path: *.tar.xz
-        if-no-files-found: error
+          path: ./*.tar.xz
+          if-no-files-found: error
