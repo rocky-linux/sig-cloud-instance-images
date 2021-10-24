@@ -9,7 +9,10 @@ on:
 
 jobs:
   Run-ImageFactory-Builds:
-    runs-on: self-hosted
+    strategy:
+      matrix: 
+        arch: [x64, ARM64]
+    runs-on: [self-hosted, ${{ matrix.arch }}]
     steps:
       - name: Checkout sig-cloud-instance-images
         uses: actions/checkout@v2
