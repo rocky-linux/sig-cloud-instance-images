@@ -15,5 +15,5 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build images
-        run: pushd . && cd kickstarts && checkout r8 && popd && make
+        run: make
 
