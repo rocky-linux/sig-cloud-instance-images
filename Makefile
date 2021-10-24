@@ -33,7 +33,7 @@ clean:
 	-rm *.meta 
 
 $(KICKSTART_DIR):
-	git clone --branch r$(MAJOR) --single-branch ssh://git@git.rockylinux.org:22220/rocky/kickstarts.git kickstarts
+	git clone --branch r$(MAJOR) --single-branch https://git.rockylinux.org/rocky/kickstarts.git kickstarts
 
 $(BASEIMAGE_META): $(KICKSTART_DIR)
 	sudo imagefactory $(DEBUGPARAM) base_image \
