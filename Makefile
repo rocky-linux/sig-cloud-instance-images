@@ -55,4 +55,4 @@ $(OUTNAME).tar.xz: $(TARGETIMAGE_META)
 	tar -Oxf out/$(TARGETIMAGEUUID).tar.xz */layer.tar | xz > out/$(OUTNAME).tar.xz
 
 publish:
-	@echo out/$(OUTNAME).tar.xz
+	@echo $(OUTNAME).tar.xz

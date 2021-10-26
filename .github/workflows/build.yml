@@ -23,10 +23,13 @@ jobs:
 
       - name: Build images
         run: make
-    
+
+      - name: Get image name
+        run: echo "ARTIFACT_NAME=$(make publish)" >> $GITHUB_ENV
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: rocky-${{ matrix.architecture }}.tar.xz
-          path: ./*.tar.xz
+          name: ${{ env.ARTIFACT_NAME }}
+          path: out/${{ env.ARTIFACT_NAME }}
           if-no-files-found: error
