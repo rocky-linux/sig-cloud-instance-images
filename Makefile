@@ -32,6 +32,9 @@ CONTAINER_NAME = rocky-$(MAJOR)-$(TYPE)-$(RELEASE_VER).$(BUILDDATE).$(ARCH)
 clean:
 	-rm *.meta 
 
+publish:
+	@echo $(OUTNAME).tar.xz
+
 $(KICKSTART_DIR):
 	git clone --branch r$(MAJOR) --single-branch https://git.rockylinux.org/rocky/kickstarts.git kickstarts
 
@@ -51,8 +54,5 @@ $(TARGETIMAGE_META): $(BASEIMAGE_META)
 
 $(OUTNAME).tar.xz: $(TARGETIMAGE_META)
 	mkdir out
-	ln $(STORAGEDIR)/$(TARGETIMAGEUUID).body out/$(TARGETIMAGEUUID).tar.xz
-	tar -Oxf out/$(TARGETIMAGEUUID).tar.xz */layer.tar | xz > out/$(OUTNAME).tar.xz
+	tar -Oxf $(STORAGEDIR)/$(TARGETIMAGEUUID).body */layer.tar | xz > out/$(OUTNAME).tar.xz
 
-publish:
-	@echo $(OUTNAME).tar.xz
