@@ -50,7 +50,9 @@ $(TARGETIMAGE_META): $(BASEIMAGE_META)
 		docker | tee -a logs/target_image-$(OUTNAME).out | tail -n4 > $(TARGETIMAGE_META) || exit 3
 
 $(OUTNAME).tar.xz: $(TARGETIMAGE_META)
-	cp $(STORAGEDIR)/$(TARGETIMAGEUUID).body $(OUTNAME).tar.xz
+	mkdir out
+	ln $(STORAGEDIR)/$(TARGETIMAGEUUID).body out/$(TARGETIMAGEUUID).tar.xz
+	tar -Oxf out/$(TARGETIMAGEUUID).tar.xz */layer.tar | xz > out/$(OUTNAME).tar.xz
 
-test:
-	@echo $(CONTAINER_NAME)
+publish:
+	@echo out/$(OUTNAME).tar.xz
