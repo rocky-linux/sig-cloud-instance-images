@@ -30,7 +30,7 @@ TYPE=container
 CONTAINER_NAME = rocky-$(MAJOR)-$(TYPE)-$(RELEASE_VER).$(BUILDDATE).$(ARCH)
 
 clean:
-	-rm *.meta 
+	-rm *.meta
 
 publish:
 	@echo $(OUTNAME).tar.xz
@@ -55,4 +55,6 @@ $(TARGETIMAGE_META): $(BASEIMAGE_META)
 $(OUTNAME).tar.xz: $(TARGETIMAGE_META)
 	mkdir out
 	tar -Oxf $(STORAGEDIR)/$(TARGETIMAGEUUID).body */layer.tar | xz > out/$(OUTNAME).tar.xz
+	tar -tf out/$(OUTNAME).tar.xz > out/filelist.txt
+	cp $(STORAGEDIR)/$(TARGETIMAGEUUID).meta out/
 
