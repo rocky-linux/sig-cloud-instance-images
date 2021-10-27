@@ -3,7 +3,7 @@ BUILDDATE      = $(shell /bin/date +%Y%m%d_%H%M)
 KICKSTART_DIR  = kickstarts
 KICKSTART_PATH = "${KICKSTART_DIR}/Rocky-8-Container.ks"
 LOG_DIR        = logs
-OUTPUT_DIR     = output
+OUT            = out
 RELEASE_VER    = 8.4
 MAJOR          = $(shell v='$(RELEASE_VER)'; echo "$${v%.*}")
 TEMPLATE_DIR   = templates
@@ -52,13 +52,18 @@ $(TARGETIMAGE_META): $(BASEIMAGE_META)
 		--parameter repository $(CONTAINER_NAME) \
 		docker | tee -a logs/target_image-$(OUTNAME).out | tail -n4 > $(TARGETIMAGE_META) || exit 3
 
-$(OUTNAME).tar.xz: $(TARGETIMAGE_META) $(OUT)/packages.txt
+$(OUT):
+	mkdir out
+
+$(OUT)/packages.txt: $(OUT) $(TARGETIMAGE_META)
+	xmllint --xpath "//packages/*/@name" <(printf "$(jq '.icicle' < $(STORAGEDIR)/$(TARGETIMAGEUUID).meta)\n" | tr -d '\\' | tail -c +2 | head -c -2) | \
+		awk -F\= '{print substr($2,2,length($2)-2)}' | \
+		sort > $(OUT)/packages.txt
+
+$(OUTNAME).tar.xz: $(OUT)/packages.txt
 	mkdir out
 	tar -Oxf $(STORAGEDIR)/$(TARGETIMAGEUUID).body */layer.tar | xz > out/$(OUTNAME).tar.xz
 	tar -tf out/$(OUTNAME).tar.xz > out/filelist.txt
 	cp $(STORAGEDIR)/$(TARGETIMAGEUUID).meta out/build.meta
 
-$(OUT)/packages.txt:
-	xmllint --xpath "//packages/*/@name" <(printf "$(jq '.icicle' < $(STORAGEDIR)/$(TARGETIMAGEUUID).meta)\n" | tr -d '\\' | tail -c +2 | head -c -2) | \
-		awk -F\= '{print substr($2,2,length($2)-2)}' | \
-		sort > $(OUT)/packages.txt
+
