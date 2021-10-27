@@ -55,15 +55,14 @@ $(TARGETIMAGE_META): $(BASEIMAGE_META)
 $(OUT):
 	mkdir out
 
-$(OUT)/packages.txt: $(OUT) $(TARGETIMAGE_META)
+$(OUT)/packages.txt: $(OUT)
 	xmllint --xpath "//packages/*/@name" <(printf "$(jq '.icicle' < $(STORAGEDIR)/$(TARGETIMAGEUUID).meta)\n" | tr -d '\\' | tail -c +2 | head -c -2) | \
 		awk -F\= '{print substr($2,2,length($2)-2)}' | \
 		sort > $(OUT)/packages.txt
 
-$(OUTNAME).tar.xz: $(OUT)/packages.txt
-	mkdir out
-	tar -Oxf $(STORAGEDIR)/$(TARGETIMAGEUUID).body */layer.tar | xz > out/$(OUTNAME).tar.xz
-	tar -tf out/$(OUTNAME).tar.xz > out/filelist.txt
-	cp $(STORAGEDIR)/$(TARGETIMAGEUUID).meta out/build.meta
+$(OUTNAME).tar.xz: $(OUT) $(TARGETIMAGE_META)
+	tar -Oxf $(STORAGEDIR)/$(TARGETIMAGEUUID).body */layer.tar | xz > $(OUT)/$(OUTNAME).tar.xz
+	tar -tf $(OUT)/$(OUTNAME).tar.xz > $(OUT)/filelist.txt
+	cp $(STORAGEDIR)/$(TARGETIMAGEUUID).meta $(OUT)/build.meta
 
 
