@@ -52,9 +52,14 @@ $(TARGETIMAGE_META): $(BASEIMAGE_META)
 		--parameter repository $(CONTAINER_NAME) \
 		docker | tee -a logs/target_image-$(OUTNAME).out | tail -n4 > $(TARGETIMAGE_META) || exit 3
 
-$(OUTNAME).tar.xz: $(TARGETIMAGE_META)
+$(OUTNAME).tar.xz: $(TARGETIMAGE_META) $(OUT)/packages.txt
 	mkdir out
 	tar -Oxf $(STORAGEDIR)/$(TARGETIMAGEUUID).body */layer.tar | xz > out/$(OUTNAME).tar.xz
 	tar -tf out/$(OUTNAME).tar.xz > out/filelist.txt
 	cp $(STORAGEDIR)/$(TARGETIMAGEUUID).meta out/
 
+$(OUT)/packages.txt:
+	xmllint --xpath "//packages/*/@name" <(printf "$(jq '.icicle' < $(STORAGEDIR)/$(TARGETIMAGEUUID).meta)\n" | tail -c +2 | head -c -2) | \
+		tr ' ' '\n' | \
+		awk -F\= '{print substr($2,2,length($2)-2)}' | \
+		sort > $(OUT)/packages.txt
