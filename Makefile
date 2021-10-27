@@ -56,10 +56,9 @@ $(OUTNAME).tar.xz: $(TARGETIMAGE_META) $(OUT)/packages.txt
 	mkdir out
 	tar -Oxf $(STORAGEDIR)/$(TARGETIMAGEUUID).body */layer.tar | xz > out/$(OUTNAME).tar.xz
 	tar -tf out/$(OUTNAME).tar.xz > out/filelist.txt
-	cp $(STORAGEDIR)/$(TARGETIMAGEUUID).meta out/
+	cp $(STORAGEDIR)/$(TARGETIMAGEUUID).meta out/build.meta
 
 $(OUT)/packages.txt:
-	xmllint --xpath "//packages/*/@name" <(printf "$(jq '.icicle' < $(STORAGEDIR)/$(TARGETIMAGEUUID).meta)\n" | tail -c +2 | head -c -2) | \
-		tr ' ' '\n' | \
+	xmllint --xpath "//packages/*/@name" <(printf "$(jq '.icicle' < $(STORAGEDIR)/$(TARGETIMAGEUUID).meta)\n" | tr -d '\\' | tail -c +2 | head -c -2) | \
 		awk -F\= '{print substr($2,2,length($2)-2)}' | \
 		sort > $(OUT)/packages.txt
