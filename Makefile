@@ -4,7 +4,7 @@ KICKSTART_DIR  = kickstarts
 KICKSTART_PATH = "${KICKSTART_DIR}/Rocky-8-Container.ks"
 LOG_DIR        = logs
 OUT            = out
-RELEASE_VER    = 8.4
+RELEASE_VER    = 8.5
 MAJOR          = $(shell v='$(RELEASE_VER)'; echo "$${v%.*}")
 TEMPLATE_DIR   = templates
 TEMPLATE_PATH  = "${TEMPLATE_DIR}/tdl-${ARCH}.xml"

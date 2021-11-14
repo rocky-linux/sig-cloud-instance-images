@@ -1,5 +1,5 @@
 <template>
-    <name>Rocky-8-Container-8.4.20211020.1.aarch64</name>
+    <name>Rocky-8-Container-8.5.20211114.1.aarch64</name>
         <os>
             <name>Fedora</name>
             <version>20</version>
@@ -12,7 +12,7 @@
 '</extra_command>
             </icicle>
         </os>
-    <description>Rocky-8-Container-8.4.20211020.1.aarch64 OS</description>
+    <description>Rocky-8-Container-8.5.20211114.1.aarch64 OS</description>
     <disk>
         <size>10G</size>
     </disk>
