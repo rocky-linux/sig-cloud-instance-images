@@ -9,7 +9,7 @@ MAJOR          = $(shell v='$(RELEASE_VER)'; echo "$${v%.*}")
 TEMPLATE_DIR   = templates
 TEMPLATE_PATH  = "${TEMPLATE_DIR}/tdl-${ARCH}.xml"
 
-OUTNAME          := rocky-${RELEASE_VER}-docker-${ARCH}
+OUTNAME          := rocky-${RELEASE_VER}-docker
 BASEIMAGE_META   := base_image-$(OUTNAME).meta
 TARGETIMAGE_META := target_image-$(OUTNAME).meta
 
@@ -33,7 +33,7 @@ clean:
 	-rm *.meta
 
 publish:
-	@echo $(OUTNAME).tar.xz
+	@echo $(OUTNAME)-$(ARCH).tar.xz
 
 $(KICKSTART_DIR):
 	git clone --branch r$(MAJOR) --single-branch https://git.rockylinux.org/rocky/kickstarts.git kickstarts
