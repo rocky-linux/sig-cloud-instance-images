@@ -1,0 +1,38 @@
+---
+name: Build container images
+
+on:
+  push:
+    branches: [ $default-branch, imagefactory ]
+  pull_request:
+    branches: [ $default-branch ]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 0"
+
+jobs:
+  Run-ImageFactory-Builds:
+    strategy:
+      matrix: 
+        architecture:
+          - x64
+          - ARM64
+    runs-on: 
+      - self-hosted
+      - ${{ matrix.architecture }}
+    steps:
+      - name: Checkout sig-cloud-instance-images
+        uses: actions/checkout@v2
+
+      - name: Build images
+        run: make
+
+      - name: Get image name
+        run: echo "ARTIFACT_NAME=$(make publish)" >> $GITHUB_ENV
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: out/
+          if-no-files-found: error

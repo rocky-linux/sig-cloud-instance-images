@@ -1,0 +1,16 @@
+<template>
+    <name>Rocky-8-Container-8.5.20211114.1.x86_64</name>
+        <os>
+            <name>Fedora</name>
+            <version>26</version>
+            <arch>x86_64</arch>
+            <install type='url'>
+                    <url>http://dl.rockylinux.org/stg/rocky/8/BaseOS/x86_64/os/</url>
+            </install>
+        </os>
+    <description>Rocky-8-Container-8.5.20211114.1.x86_64 OS</description>
+    <disk>
+        <size>10G</size>
+    </disk>
+</template>
+

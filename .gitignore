@@ -1,0 +1,6 @@
+*.swp
+*.meta
+*.xz
+kickstarts/
+logs/
+output/
