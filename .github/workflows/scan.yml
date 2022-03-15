@@ -1,4 +1,4 @@
-name: scan
+name: Scan images using trivy
 on:
   workflow_dispatch:
   schedule:
@@ -6,6 +6,9 @@ on:
 
 jobs:
   scan:
+    permissions:
+      contents: read
+      security-events: write # allow github/codeql-action/upload-sarif
     name: Scan for Security Vulnerabilities
     runs-on: ubuntu-18.04
     steps:
