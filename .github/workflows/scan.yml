@@ -31,3 +31,22 @@ jobs:
         if: always() 
         with:
           sarif_file: 'trivy-results.sarif'
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        if: always() 
+        with:
+          image-ref: 'docker.io/library/rockylinux:8'
+          format: 'table'
+          output: 'trivy-results'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH,MEDIUM'
+
+      - name: Save scan results as an artifact
+        uses: actions/upload-artifact@v3
+        if: always() 
+        with:
+          name: 'trivy-results'
+          path: 'trivy-results'
