@@ -7,7 +7,7 @@ on:
 jobs:
   scan:
     permissions:
-      contents: read
+      contents: write
       security-events: write # allow github/codeql-action/upload-sarif
     name: Scan for Security Vulnerabilities
     runs-on: ubuntu-18.04
