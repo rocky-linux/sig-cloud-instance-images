@@ -41,6 +41,7 @@ jobs:
         if: always() 
         with:
           image-ref: 'docker.io/rockylinux/rockylinux:8'
+          format: 'template'
           template: '@contrib/html.tpl'
           output: 'public/index.html'
           exit-code: '1'
