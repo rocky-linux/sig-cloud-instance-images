@@ -41,8 +41,8 @@ jobs:
         if: always() 
         with:
           image-ref: 'docker.io/rockylinux/rockylinux:8'
-          format: 'html'
-          output: 'public/trivy-results'
+          template: '@contrib/html.tpl'
+          output: 'public/index.html'
           exit-code: '1'
           ignore-unfixed: true
           vuln-type: 'os,library'
