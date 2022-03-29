@@ -31,6 +31,10 @@ jobs:
         if: always() 
         with:
           sarif_file: 'trivy-results.sarif'
+          
+      - name: Create public folder
+        run: |
+          mkdir -p public/
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
