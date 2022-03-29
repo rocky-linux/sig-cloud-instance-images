@@ -14,13 +14,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: Create public folder
+        run: |
+          mkdir -p public/
       
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'docker.io/rockylinux/rockylinux:8'
           format: 'sarif'
-          output: 'trivy-results.sarif'
+          output: 'public/trivy-results.sarif'
           exit-code: '1'
           ignore-unfixed: true
           vuln-type: 'os,library'
@@ -30,11 +34,8 @@ jobs:
         uses: github/codeql-action/upload-sarif@v1
         if: always() 
         with:
-          sarif_file: 'trivy-results.sarif'
-          
-      - name: Create public folder
-        run: |
-          mkdir -p public/
+          sarif_file: 'public/trivy-results.sarif'
+        
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
@@ -42,7 +43,7 @@ jobs:
         with:
           image-ref: 'docker.io/rockylinux/rockylinux:8'
           format: 'template'
-          template: '@contrib/html.tpl'
+          template: '@/contrib/html.tpl'
           output: 'public/index.html'
           exit-code: '1'
           ignore-unfixed: true
