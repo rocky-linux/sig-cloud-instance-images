@@ -54,6 +54,7 @@ jobs:
       - name: Save scan results to github pages
         uses: peaceiris/actions-gh-pages@v3
         #if: ${{ github.ref == 'refs/heads/main' }}
+        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
