@@ -1,5 +1,6 @@
 name: Scan images using trivy
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: "0 13 * * *"
