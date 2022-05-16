@@ -1,0 +1,4 @@
+FROM scratch
+ADD 8b6c86e781b9874b18988879030093b66270a2d8 /
+
+CMD ["/bin/bash"]
