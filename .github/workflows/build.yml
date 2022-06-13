@@ -3,7 +3,7 @@ name: Build container images
 
 on:
   push:
-    branches: [ $default-branch, imagefactory ]
+    branches: [ $default-branch ]
   pull_request:
     branches: [ $default-branch ]
   workflow_dispatch:
@@ -16,10 +16,21 @@ jobs:
       matrix: 
         architecture:
           - x64
-          - ARM64
+          - arm64
+        version:
+          - 8
+          - 9.0-rc
+        include: 
+          - version: 9.0-rc
+            experimental: true
+        experimental: [false]
     runs-on: 
       - self-hosted
       - ${{ matrix.architecture }}
+    continue-on-error: ${{ matrix.experimental }}
+    env:
+      CI_RELEASE: ${{ matrix.version }}
+      DEBUG: 1
     steps:
       - name: Checkout sig-cloud-instance-images
         uses: actions/checkout@v2

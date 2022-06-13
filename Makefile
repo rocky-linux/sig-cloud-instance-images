@@ -1,13 +1,14 @@
 ARCH           = $(shell uname -m)
 BUILDDATE      = $(shell /bin/date +%Y%m%d_%H%M)
-KICKSTART_DIR  = kickstarts
-KICKSTART_PATH = "${KICKSTART_DIR}/Rocky-8-Container.ks"
 LOG_DIR        = logs
 OUT            = out
-RELEASE_VER    = 8.6
+RELEASE_VER    = $(shell echo ${CI_RELEASE})
 MAJOR          = $(shell v='$(RELEASE_VER)'; echo "$${v%.*}")
 TEMPLATE_DIR   = templates
 TEMPLATE_PATH  = "${TEMPLATE_DIR}/tdl-${ARCH}.xml"
+
+KICKSTART_DIR  = kickstarts
+KICKSTART_PATH = "${KICKSTART_DIR}/Rocky-${MAJOR}-Container.ks"
 
 OUTNAME          := rocky-${RELEASE_VER}-docker
 BASEIMAGE_META   := base_image-$(OUTNAME).meta
