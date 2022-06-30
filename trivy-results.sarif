@@ -9,7 +9,7 @@
           "informationUri": "https://github.com/aquasecurity/trivy",
           "name": "Trivy",
           "rules": [],
-          "version": "0.29.1"
+          "version": "0.29.2"
         }
       },
       "results": [],
