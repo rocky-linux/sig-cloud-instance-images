@@ -1,4 +1,4 @@
 FROM scratch
-ADD rocky-8.6-Container-Minimal.tar.xz /
+ADD layer.tar.xz /
 
 CMD ["/bin/bash"]
