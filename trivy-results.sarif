@@ -8,11 +8,166 @@
           "fullName": "Trivy Vulnerability Scanner",
           "informationUri": "https://github.com/aquasecurity/trivy",
           "name": "Trivy",
-          "rules": [],
+          "rules": [
+            {
+              "id": "CVE-2022-1785",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-1785"
+              },
+              "fullDescription": {
+                "text": "Out-of-bounds Write in GitHub repository vim/vim prior to 8.2.4977."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-1785",
+              "help": {
+                "text": "Vulnerability CVE-2022-1785\nSeverity: MEDIUM\nPackage: vim-minimal\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)\nOut-of-bounds Write in GitHub repository vim/vim prior to 8.2.4977.",
+                "markdown": "**Vulnerability CVE-2022-1785**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|vim-minimal|2:8.0.1763-19.el8_6.4|[CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)|\n\nOut-of-bounds Write in GitHub repository vim/vim prior to 8.2.4977."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-1897",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-1897"
+              },
+              "fullDescription": {
+                "text": "Out-of-bounds Write in GitHub repository vim/vim prior to 8.2."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-1897",
+              "help": {
+                "text": "Vulnerability CVE-2022-1897\nSeverity: MEDIUM\nPackage: vim-minimal\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)\nOut-of-bounds Write in GitHub repository vim/vim prior to 8.2.",
+                "markdown": "**Vulnerability CVE-2022-1897**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|vim-minimal|2:8.0.1763-19.el8_6.4|[CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)|\n\nOut-of-bounds Write in GitHub repository vim/vim prior to 8.2."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-1927",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-1927"
+              },
+              "fullDescription": {
+                "text": "Buffer Over-read in GitHub repository vim/vim prior to 8.2."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-1927",
+              "help": {
+                "text": "Vulnerability CVE-2022-1927\nSeverity: MEDIUM\nPackage: vim-minimal\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)\nBuffer Over-read in GitHub repository vim/vim prior to 8.2.",
+                "markdown": "**Vulnerability CVE-2022-1927**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|vim-minimal|2:8.0.1763-19.el8_6.4|[CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)|\n\nBuffer Over-read in GitHub repository vim/vim prior to 8.2."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            }
+          ],
           "version": "0.30.4"
         }
       },
-      "results": [],
+      "results": [
+        {
+          "ruleId": "CVE-2022-1785",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1785\nSeverity: MEDIUM\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-1897",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1897\nSeverity: MEDIUM\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-1927",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1927\nSeverity: MEDIUM\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        }
+      ],
       "columnKind": "utf16CodeUnits",
       "originalUriBaseIds": {
         "ROOTPATH": {
