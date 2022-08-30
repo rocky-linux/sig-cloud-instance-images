@@ -10,6 +10,60 @@
           "name": "Trivy",
           "rules": [
             {
+              "id": "CVE-2022-32206",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-32206"
+              },
+              "fullDescription": {
+                "text": "curl \u0026lt; 7.84.0 supports \u0026#34;chained\u0026#34; HTTP compression algorithms, meaning that a serverresponse can be compressed multiple times and potentially with different algorithms. The number of acceptable \u0026#34;links\u0026#34; in this \u0026#34;decompression chain\u0026#34; was unbounded, allowing a malicious server to insert a virtually unlimited number of compression steps.The use of such a decompression chain could result in a \u0026#34;malloc bomb\u0026#34;, makingcurl end up spending enormous amounts of allocated heap memory, or trying toand returning out of memory errors."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-32206",
+              "help": {
+                "text": "Vulnerability CVE-2022-32206\nSeverity: MEDIUM\nPackage: libcurl-minimal\nFixed Version: 7.61.1-22.el8_6.4\nLink: [CVE-2022-32206](https://avd.aquasec.com/nvd/cve-2022-32206)\ncurl \u003c 7.84.0 supports \"chained\" HTTP compression algorithms, meaning that a serverresponse can be compressed multiple times and potentially with different algorithms. The number of acceptable \"links\" in this \"decompression chain\" was unbounded, allowing a malicious server to insert a virtually unlimited number of compression steps.The use of such a decompression chain could result in a \"malloc bomb\", makingcurl end up spending enormous amounts of allocated heap memory, or trying toand returning out of memory errors.",
+                "markdown": "**Vulnerability CVE-2022-32206**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libcurl-minimal|7.61.1-22.el8_6.4|[CVE-2022-32206](https://avd.aquasec.com/nvd/cve-2022-32206)|\n\ncurl \u003c 7.84.0 supports \"chained\" HTTP compression algorithms, meaning that a serverresponse can be compressed multiple times and potentially with different algorithms. The number of acceptable \"links\" in this \"decompression chain\" was unbounded, allowing a malicious server to insert a virtually unlimited number of compression steps.The use of such a decompression chain could result in a \"malloc bomb\", makingcurl end up spending enormous amounts of allocated heap memory, or trying toand returning out of memory errors."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-32208",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-32208"
+              },
+              "fullDescription": {
+                "text": "When curl \u0026lt; 7.84.0 does FTP transfers secured by krb5, it handles message verification failures wrongly. This flaw makes it possible for a Man-In-The-Middle attack to go unnoticed and even allows it to inject data to the client."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-32208",
+              "help": {
+                "text": "Vulnerability CVE-2022-32208\nSeverity: MEDIUM\nPackage: libcurl-minimal\nFixed Version: 7.61.1-22.el8_6.4\nLink: [CVE-2022-32208](https://avd.aquasec.com/nvd/cve-2022-32208)\nWhen curl \u003c 7.84.0 does FTP transfers secured by krb5, it handles message verification failures wrongly. This flaw makes it possible for a Man-In-The-Middle attack to go unnoticed and even allows it to inject data to the client.",
+                "markdown": "**Vulnerability CVE-2022-32208**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libcurl-minimal|7.61.1-22.el8_6.4|[CVE-2022-32208](https://avd.aquasec.com/nvd/cve-2022-32208)|\n\nWhen curl \u003c 7.84.0 does FTP transfers secured by krb5, it handles message verification failures wrongly. This flaw makes it possible for a Man-In-The-Middle attack to go unnoticed and even allows it to inject data to the client."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
               "id": "CVE-2022-1785",
               "name": "OsPackageVulnerability",
               "shortDescription": {
@@ -96,8 +150,104 @@
       },
       "results": [
         {
-          "ruleId": "CVE-2022-1785",
+          "ruleId": "CVE-2022-32206",
           "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: curl\nInstalled Version: 7.61.1-22.el8_6.3\nVulnerability CVE-2022-32206\nSeverity: MEDIUM\nFixed Version: 7.61.1-22.el8_6.4\nLink: [CVE-2022-32206](https://avd.aquasec.com/nvd/cve-2022-32206)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-32208",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: curl\nInstalled Version: 7.61.1-22.el8_6.3\nVulnerability CVE-2022-32208\nSeverity: MEDIUM\nFixed Version: 7.61.1-22.el8_6.4\nLink: [CVE-2022-32208](https://avd.aquasec.com/nvd/cve-2022-32208)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-32206",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: libcurl-minimal\nInstalled Version: 7.61.1-22.el8_6.3\nVulnerability CVE-2022-32206\nSeverity: MEDIUM\nFixed Version: 7.61.1-22.el8_6.4\nLink: [CVE-2022-32206](https://avd.aquasec.com/nvd/cve-2022-32206)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-32208",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: libcurl-minimal\nInstalled Version: 7.61.1-22.el8_6.3\nVulnerability CVE-2022-32208\nSeverity: MEDIUM\nFixed Version: 7.61.1-22.el8_6.4\nLink: [CVE-2022-32208](https://avd.aquasec.com/nvd/cve-2022-32208)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-1785",
+          "ruleIndex": 2,
           "level": "warning",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1785\nSeverity: MEDIUM\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)"
@@ -121,7 +271,7 @@
         },
         {
           "ruleId": "CVE-2022-1897",
-          "ruleIndex": 1,
+          "ruleIndex": 3,
           "level": "warning",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1897\nSeverity: MEDIUM\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)"
@@ -145,7 +295,7 @@
         },
         {
           "ruleId": "CVE-2022-1927",
-          "ruleIndex": 2,
+          "ruleIndex": 4,
           "level": "warning",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1927\nSeverity: MEDIUM\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)"
