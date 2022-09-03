@@ -64,6 +64,33 @@
               }
             },
             {
+              "id": "CVE-2022-2526",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-2526"
+              },
+              "fullDescription": {
+                "text": "A use-after-free vulnerability was found in systemd. This issue occurs due to the on_stream_io() function and dns_stream_complete() function in \u0026#39;resolved-dns-stream.c\u0026#39; not incrementing the reference counting for the DnsStream object. Therefore, other functions and callbacks called can dereference the DNSStream object, causing the use-after-free when the reference is still used later."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-2526",
+              "help": {
+                "text": "Vulnerability CVE-2022-2526\nSeverity: HIGH\nPackage: systemd-pam\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)\nA use-after-free vulnerability was found in systemd. This issue occurs due to the on_stream_io() function and dns_stream_complete() function in 'resolved-dns-stream.c' not incrementing the reference counting for the DnsStream object. Therefore, other functions and callbacks called can dereference the DNSStream object, causing the use-after-free when the reference is still used later.",
+                "markdown": "**Vulnerability CVE-2022-2526**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|systemd-pam|239-58.el8_6.4|[CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)|\n\nA use-after-free vulnerability was found in systemd. This issue occurs due to the on_stream_io() function and dns_stream_complete() function in 'resolved-dns-stream.c' not incrementing the reference counting for the DnsStream object. Therefore, other functions and callbacks called can dereference the DNSStream object, causing the use-after-free when the reference is still used later."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
               "id": "CVE-2022-1785",
               "name": "OsPackageVulnerability",
               "shortDescription": {
@@ -246,8 +273,80 @@
           ]
         },
         {
-          "ruleId": "CVE-2022-1785",
+          "ruleId": "CVE-2022-2526",
           "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Package: systemd\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: HIGH\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-2526",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Package: systemd-libs\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: HIGH\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-2526",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Package: systemd-pam\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: HIGH\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-1785",
+          "ruleIndex": 3,
           "level": "warning",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1785\nSeverity: MEDIUM\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)"
@@ -271,7 +370,7 @@
         },
         {
           "ruleId": "CVE-2022-1897",
-          "ruleIndex": 3,
+          "ruleIndex": 4,
           "level": "warning",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1897\nSeverity: MEDIUM\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)"
@@ -295,7 +394,7 @@
         },
         {
           "ruleId": "CVE-2022-1927",
-          "ruleIndex": 4,
+          "ruleIndex": 5,
           "level": "warning",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1927\nSeverity: MEDIUM\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)"
