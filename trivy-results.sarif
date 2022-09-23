@@ -28,7 +28,7 @@
               },
               "properties": {
                 "precision": "very-high",
-                "security-severity": "5.5",
+                "security-severity": "6.5",
                 "tags": [
                   "vulnerability",
                   "security",
@@ -55,11 +55,119 @@
               },
               "properties": {
                 "precision": "very-high",
-                "security-severity": "5.5",
+                "security-severity": "5.9",
                 "tags": [
                   "vulnerability",
                   "security",
                   "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-1292",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-1292"
+              },
+              "fullDescription": {
+                "text": "The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script. Use of the c_rehash script is considered obsolete and should be replaced by the OpenSSL rehash command line tool. Fixed in OpenSSL 3.0.3 (Affected 3.0.0,3.0.1,3.0.2). Fixed in OpenSSL 1.1.1o (Affected 1.1.1-1.1.1n). Fixed in OpenSSL 1.0.2ze (Affected 1.0.2-1.0.2zd)."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-1292",
+              "help": {
+                "text": "Vulnerability CVE-2022-1292\nSeverity: CRITICAL\nPackage: openssl-libs\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-1292](https://avd.aquasec.com/nvd/cve-2022-1292)\nThe c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script. Use of the c_rehash script is considered obsolete and should be replaced by the OpenSSL rehash command line tool. Fixed in OpenSSL 3.0.3 (Affected 3.0.0,3.0.1,3.0.2). Fixed in OpenSSL 1.1.1o (Affected 1.1.1-1.1.1n). Fixed in OpenSSL 1.0.2ze (Affected 1.0.2-1.0.2zd).",
+                "markdown": "**Vulnerability CVE-2022-1292**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|openssl-libs|1:1.1.1k-7.el8_6|[CVE-2022-1292](https://avd.aquasec.com/nvd/cve-2022-1292)|\n\nThe c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script. Use of the c_rehash script is considered obsolete and should be replaced by the OpenSSL rehash command line tool. Fixed in OpenSSL 3.0.3 (Affected 3.0.0,3.0.1,3.0.2). Fixed in OpenSSL 1.1.1o (Affected 1.1.1-1.1.1n). Fixed in OpenSSL 1.0.2ze (Affected 1.0.2-1.0.2zd)."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "CRITICAL"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-2068",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-2068"
+              },
+              "fullDescription": {
+                "text": "In addition to the c_rehash shell command injection identified in CVE-2022-1292, further circumstances where the c_rehash script does not properly sanitise shell metacharacters to prevent command injection were found by code review. When the CVE-2022-1292 was fixed it was not discovered that there are other places in the script where the file names of certificates being hashed were possibly passed to a command executed through the shell. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script. Use of the c_rehash script is considered obsolete and should be replaced by the OpenSSL rehash command line tool. Fixed in OpenSSL 3.0.4 (Affected 3.0.0,3.0.1,3.0.2,3.0.3). Fixed in OpenSSL 1.1.1p (Affected 1.1.1-1.1.1o). Fixed in OpenSSL 1.0.2zf (Affected 1.0.2-1.0.2ze)."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-2068",
+              "help": {
+                "text": "Vulnerability CVE-2022-2068\nSeverity: CRITICAL\nPackage: openssl-libs\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-2068](https://avd.aquasec.com/nvd/cve-2022-2068)\nIn addition to the c_rehash shell command injection identified in CVE-2022-1292, further circumstances where the c_rehash script does not properly sanitise shell metacharacters to prevent command injection were found by code review. When the CVE-2022-1292 was fixed it was not discovered that there are other places in the script where the file names of certificates being hashed were possibly passed to a command executed through the shell. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script. Use of the c_rehash script is considered obsolete and should be replaced by the OpenSSL rehash command line tool. Fixed in OpenSSL 3.0.4 (Affected 3.0.0,3.0.1,3.0.2,3.0.3). Fixed in OpenSSL 1.1.1p (Affected 1.1.1-1.1.1o). Fixed in OpenSSL 1.0.2zf (Affected 1.0.2-1.0.2ze).",
+                "markdown": "**Vulnerability CVE-2022-2068**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|openssl-libs|1:1.1.1k-7.el8_6|[CVE-2022-2068](https://avd.aquasec.com/nvd/cve-2022-2068)|\n\nIn addition to the c_rehash shell command injection identified in CVE-2022-1292, further circumstances where the c_rehash script does not properly sanitise shell metacharacters to prevent command injection were found by code review. When the CVE-2022-1292 was fixed it was not discovered that there are other places in the script where the file names of certificates being hashed were possibly passed to a command executed through the shell. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script. Use of the c_rehash script is considered obsolete and should be replaced by the OpenSSL rehash command line tool. Fixed in OpenSSL 3.0.4 (Affected 3.0.0,3.0.1,3.0.2,3.0.3). Fixed in OpenSSL 1.1.1p (Affected 1.1.1-1.1.1o). Fixed in OpenSSL 1.0.2zf (Affected 1.0.2-1.0.2ze)."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "CRITICAL"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-2097",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-2097"
+              },
+              "fullDescription": {
+                "text": "AES OCB mode for 32-bit x86 platforms using the AES-NI assembly optimised implementation will not encrypt the entirety of the data under some circumstances. This could reveal sixteen bytes of data that was preexisting in the memory that wasn\u0026#39;t written. In the special case of \u0026#34;in place\u0026#34; encryption, sixteen bytes of the plaintext would be revealed. Since OpenSSL does not support OCB based cipher suites for TLS and DTLS, they are both unaffected. Fixed in OpenSSL 3.0.5 (Affected 3.0.0-3.0.4). Fixed in OpenSSL 1.1.1q (Affected 1.1.1-1.1.1p)."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-2097",
+              "help": {
+                "text": "Vulnerability CVE-2022-2097\nSeverity: MEDIUM\nPackage: openssl-libs\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-2097](https://avd.aquasec.com/nvd/cve-2022-2097)\nAES OCB mode for 32-bit x86 platforms using the AES-NI assembly optimised implementation will not encrypt the entirety of the data under some circumstances. This could reveal sixteen bytes of data that was preexisting in the memory that wasn't written. In the special case of \"in place\" encryption, sixteen bytes of the plaintext would be revealed. Since OpenSSL does not support OCB based cipher suites for TLS and DTLS, they are both unaffected. Fixed in OpenSSL 3.0.5 (Affected 3.0.0-3.0.4). Fixed in OpenSSL 1.1.1q (Affected 1.1.1-1.1.1p).",
+                "markdown": "**Vulnerability CVE-2022-2097**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|openssl-libs|1:1.1.1k-7.el8_6|[CVE-2022-2097](https://avd.aquasec.com/nvd/cve-2022-2097)|\n\nAES OCB mode for 32-bit x86 platforms using the AES-NI assembly optimised implementation will not encrypt the entirety of the data under some circumstances. This could reveal sixteen bytes of data that was preexisting in the memory that wasn't written. In the special case of \"in place\" encryption, sixteen bytes of the plaintext would be revealed. Since OpenSSL does not support OCB based cipher suites for TLS and DTLS, they are both unaffected. Fixed in OpenSSL 3.0.5 (Affected 3.0.0-3.0.4). Fixed in OpenSSL 1.1.1q (Affected 1.1.1-1.1.1p)."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.3",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-1586",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-1586"
+              },
+              "fullDescription": {
+                "text": "An out-of-bounds read vulnerability was discovered in the PCRE2 library in the compile_xclass_matchingpath() function of the pcre2_jit_compile.c file. This involves a unicode property matching issue in JIT-compiled regular expressions. The issue occurs because the character was not fully read in case-less matching within JIT."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-1586",
+              "help": {
+                "text": "Vulnerability CVE-2022-1586\nSeverity: CRITICAL\nPackage: pcre2\nFixed Version: 10.32-3.el8_6\nLink: [CVE-2022-1586](https://avd.aquasec.com/nvd/cve-2022-1586)\nAn out-of-bounds read vulnerability was discovered in the PCRE2 library in the compile_xclass_matchingpath() function of the pcre2_jit_compile.c file. This involves a unicode property matching issue in JIT-compiled regular expressions. The issue occurs because the character was not fully read in case-less matching within JIT.",
+                "markdown": "**Vulnerability CVE-2022-1586**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|pcre2|10.32-3.el8_6|[CVE-2022-1586](https://avd.aquasec.com/nvd/cve-2022-1586)|\n\nAn out-of-bounds read vulnerability was discovered in the PCRE2 library in the compile_xclass_matchingpath() function of the pcre2_jit_compile.c file. This involves a unicode property matching issue in JIT-compiled regular expressions. The issue occurs because the character was not fully read in case-less matching within JIT."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.1",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "CRITICAL"
                 ]
               }
             },
@@ -77,70 +185,16 @@
               },
               "helpUri": "https://avd.aquasec.com/nvd/cve-2022-2526",
               "help": {
-                "text": "Vulnerability CVE-2022-2526\nSeverity: HIGH\nPackage: systemd-pam\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)\nA use-after-free vulnerability was found in systemd. This issue occurs due to the on_stream_io() function and dns_stream_complete() function in 'resolved-dns-stream.c' not incrementing the reference counting for the DnsStream object. Therefore, other functions and callbacks called can dereference the DNSStream object, causing the use-after-free when the reference is still used later.",
-                "markdown": "**Vulnerability CVE-2022-2526**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|systemd-pam|239-58.el8_6.4|[CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)|\n\nA use-after-free vulnerability was found in systemd. This issue occurs due to the on_stream_io() function and dns_stream_complete() function in 'resolved-dns-stream.c' not incrementing the reference counting for the DnsStream object. Therefore, other functions and callbacks called can dereference the DNSStream object, causing the use-after-free when the reference is still used later."
+                "text": "Vulnerability CVE-2022-2526\nSeverity: CRITICAL\nPackage: systemd-pam\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)\nA use-after-free vulnerability was found in systemd. This issue occurs due to the on_stream_io() function and dns_stream_complete() function in 'resolved-dns-stream.c' not incrementing the reference counting for the DnsStream object. Therefore, other functions and callbacks called can dereference the DNSStream object, causing the use-after-free when the reference is still used later.",
+                "markdown": "**Vulnerability CVE-2022-2526**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|systemd-pam|239-58.el8_6.4|[CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)|\n\nA use-after-free vulnerability was found in systemd. This issue occurs due to the on_stream_io() function and dns_stream_complete() function in 'resolved-dns-stream.c' not incrementing the reference counting for the DnsStream object. Therefore, other functions and callbacks called can dereference the DNSStream object, causing the use-after-free when the reference is still used later."
               },
               "properties": {
                 "precision": "very-high",
-                "security-severity": "8.0",
+                "security-severity": "9.8",
                 "tags": [
                   "vulnerability",
                   "security",
-                  "HIGH"
-                ]
-              }
-            },
-            {
-              "id": "CVE-2022-1785",
-              "name": "OsPackageVulnerability",
-              "shortDescription": {
-                "text": "CVE-2022-1785"
-              },
-              "fullDescription": {
-                "text": "Out-of-bounds Write in GitHub repository vim/vim prior to 8.2.4977."
-              },
-              "defaultConfiguration": {
-                "level": "warning"
-              },
-              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-1785",
-              "help": {
-                "text": "Vulnerability CVE-2022-1785\nSeverity: MEDIUM\nPackage: vim-minimal\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)\nOut-of-bounds Write in GitHub repository vim/vim prior to 8.2.4977.",
-                "markdown": "**Vulnerability CVE-2022-1785**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|vim-minimal|2:8.0.1763-19.el8_6.4|[CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)|\n\nOut-of-bounds Write in GitHub repository vim/vim prior to 8.2.4977."
-              },
-              "properties": {
-                "precision": "very-high",
-                "security-severity": "5.5",
-                "tags": [
-                  "vulnerability",
-                  "security",
-                  "MEDIUM"
-                ]
-              }
-            },
-            {
-              "id": "CVE-2022-1897",
-              "name": "OsPackageVulnerability",
-              "shortDescription": {
-                "text": "CVE-2022-1897"
-              },
-              "fullDescription": {
-                "text": "Out-of-bounds Write in GitHub repository vim/vim prior to 8.2."
-              },
-              "defaultConfiguration": {
-                "level": "warning"
-              },
-              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-1897",
-              "help": {
-                "text": "Vulnerability CVE-2022-1897\nSeverity: MEDIUM\nPackage: vim-minimal\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)\nOut-of-bounds Write in GitHub repository vim/vim prior to 8.2.",
-                "markdown": "**Vulnerability CVE-2022-1897**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|vim-minimal|2:8.0.1763-19.el8_6.4|[CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)|\n\nOut-of-bounds Write in GitHub repository vim/vim prior to 8.2."
-              },
-              "properties": {
-                "precision": "very-high",
-                "security-severity": "5.5",
-                "tags": [
-                  "vulnerability",
-                  "security",
-                  "MEDIUM"
+                  "CRITICAL"
                 ]
               }
             },
@@ -154,20 +208,74 @@
                 "text": "Buffer Over-read in GitHub repository vim/vim prior to 8.2."
               },
               "defaultConfiguration": {
-                "level": "warning"
+                "level": "error"
               },
               "helpUri": "https://avd.aquasec.com/nvd/cve-2022-1927",
               "help": {
-                "text": "Vulnerability CVE-2022-1927\nSeverity: MEDIUM\nPackage: vim-minimal\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)\nBuffer Over-read in GitHub repository vim/vim prior to 8.2.",
-                "markdown": "**Vulnerability CVE-2022-1927**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|vim-minimal|2:8.0.1763-19.el8_6.4|[CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)|\n\nBuffer Over-read in GitHub repository vim/vim prior to 8.2."
+                "text": "Vulnerability CVE-2022-1927\nSeverity: CRITICAL\nPackage: vim-minimal\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)\nBuffer Over-read in GitHub repository vim/vim prior to 8.2.",
+                "markdown": "**Vulnerability CVE-2022-1927**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|vim-minimal|2:8.0.1763-19.el8_6.4|[CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)|\n\nBuffer Over-read in GitHub repository vim/vim prior to 8.2."
               },
               "properties": {
                 "precision": "very-high",
-                "security-severity": "5.5",
+                "security-severity": "9.8",
                 "tags": [
                   "vulnerability",
                   "security",
-                  "MEDIUM"
+                  "CRITICAL"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-1785",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-1785"
+              },
+              "fullDescription": {
+                "text": "Out-of-bounds Write in GitHub repository vim/vim prior to 8.2.4977."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-1785",
+              "help": {
+                "text": "Vulnerability CVE-2022-1785\nSeverity: HIGH\nPackage: vim-minimal\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)\nOut-of-bounds Write in GitHub repository vim/vim prior to 8.2.4977.",
+                "markdown": "**Vulnerability CVE-2022-1785**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|vim-minimal|2:8.0.1763-19.el8_6.4|[CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)|\n\nOut-of-bounds Write in GitHub repository vim/vim prior to 8.2.4977."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "7.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-1897",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-1897"
+              },
+              "fullDescription": {
+                "text": "Out-of-bounds Write in GitHub repository vim/vim prior to 8.2."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-1897",
+              "help": {
+                "text": "Vulnerability CVE-2022-1897\nSeverity: HIGH\nPackage: vim-minimal\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)\nOut-of-bounds Write in GitHub repository vim/vim prior to 8.2.",
+                "markdown": "**Vulnerability CVE-2022-1897**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|vim-minimal|2:8.0.1763-19.el8_6.4|[CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)|\n\nOut-of-bounds Write in GitHub repository vim/vim prior to 8.2."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "7.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
                 ]
               }
             }
@@ -273,11 +381,11 @@
           ]
         },
         {
-          "ruleId": "CVE-2022-2526",
+          "ruleId": "CVE-2022-1292",
           "ruleIndex": 2,
           "level": "error",
           "message": {
-            "text": "Package: systemd\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: HIGH\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
+            "text": "Package: openssl-libs\nInstalled Version: 1:1.1.1k-6.el8_5\nVulnerability CVE-2022-1292\nSeverity: CRITICAL\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-1292](https://avd.aquasec.com/nvd/cve-2022-1292)"
           },
           "locations": [
             {
@@ -297,59 +405,11 @@
           ]
         },
         {
-          "ruleId": "CVE-2022-2526",
-          "ruleIndex": 2,
-          "level": "error",
-          "message": {
-            "text": "Package: systemd-libs\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: HIGH\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "rockylinux/rockylinux",
-                  "uriBaseId": "ROOTPATH"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CVE-2022-2526",
-          "ruleIndex": 2,
-          "level": "error",
-          "message": {
-            "text": "Package: systemd-pam\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: HIGH\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "rockylinux/rockylinux",
-                  "uriBaseId": "ROOTPATH"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CVE-2022-1785",
+          "ruleId": "CVE-2022-2068",
           "ruleIndex": 3,
-          "level": "warning",
+          "level": "error",
           "message": {
-            "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1785\nSeverity: MEDIUM\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)"
+            "text": "Package: openssl-libs\nInstalled Version: 1:1.1.1k-6.el8_5\nVulnerability CVE-2022-2068\nSeverity: CRITICAL\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-2068](https://avd.aquasec.com/nvd/cve-2022-2068)"
           },
           "locations": [
             {
@@ -369,11 +429,107 @@
           ]
         },
         {
-          "ruleId": "CVE-2022-1897",
+          "ruleId": "CVE-2022-2097",
           "ruleIndex": 4,
           "level": "warning",
           "message": {
-            "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1897\nSeverity: MEDIUM\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)"
+            "text": "Package: openssl-libs\nInstalled Version: 1:1.1.1k-6.el8_5\nVulnerability CVE-2022-2097\nSeverity: MEDIUM\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-2097](https://avd.aquasec.com/nvd/cve-2022-2097)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-1586",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Package: pcre2\nInstalled Version: 10.32-2.el8\nVulnerability CVE-2022-1586\nSeverity: CRITICAL\nFixed Version: 10.32-3.el8_6\nLink: [CVE-2022-1586](https://avd.aquasec.com/nvd/cve-2022-1586)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-2526",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Package: systemd\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: CRITICAL\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-2526",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Package: systemd-libs\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: CRITICAL\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-2526",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Package: systemd-pam\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: CRITICAL\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
           },
           "locations": [
             {
@@ -394,10 +550,58 @@
         },
         {
           "ruleId": "CVE-2022-1927",
-          "ruleIndex": 5,
-          "level": "warning",
+          "ruleIndex": 7,
+          "level": "error",
           "message": {
-            "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1927\nSeverity: MEDIUM\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)"
+            "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1927\nSeverity: CRITICAL\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-1785",
+          "ruleIndex": 8,
+          "level": "error",
+          "message": {
+            "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1785\nSeverity: HIGH\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-1897",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1897\nSeverity: HIGH\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)"
           },
           "locations": [
             {
