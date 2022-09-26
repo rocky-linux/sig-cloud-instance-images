@@ -1,0 +1,7 @@
+ARG Imageversion
+
+FROM rockylinux:$Imageversion
+
+RUN dnf -y update
+
+RUN dnf clean all
