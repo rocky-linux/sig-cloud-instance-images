@@ -55,7 +55,7 @@ jobs:
           IMAGE: ghcr.io/rocky-linux/empanadas-imagefactory:latest
           LIBVIRT_DEFAULT_URI:
         run: |
-          export VARIANT_ARGS="$(test -z '${{ matrix.type.variant }}' && '' || '--variant ${{ matrix.type.variant }}')"
+          export VARIANT_ARGS="$(test -z '${{ matrix.type.variant }}' && echo '' || echo '--variant ${{ matrix.type.variant }}')"
           export CMD="build-image --version ${{ matrix.version.major }} --type ${{ matrix.type.name }} ${VARIANT_ARGS}"
           sudo podman run --rm --privileged --security-opt label=disable --device fuse \
             -v /var/run/libvirt:/var/run/libvirt:rw -v /var/lib/imagefactory:/var/lib/imagefactory:rw \
