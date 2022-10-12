@@ -18,6 +18,7 @@ on:
 jobs:
   build:
     strategy:
+      max-parallel: 1
       matrix: 
         architecture:
           - x64
@@ -42,9 +43,11 @@ jobs:
           - name: OCP
         exclude:
           - architecture: s390x
-            version: 8
+            version:
+              major: 8
           - architecture: ppc64le
-            version: 8
+            version:
+              major: 8
     runs-on: 
       - self-hosted
       - ${{ matrix.architecture }}
