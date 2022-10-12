@@ -1,0 +1,68 @@
+---
+name: Build all images
+
+on:
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: "run build-image with --debug"
+        default: false
+        type: boolean
+  # push:
+  #   branches: [ $default-branch, imagefactory ]
+  # pull_request:
+  #   branches: [ $default-branch ]
+  # schedule:
+  #   - cron: "0 0 * * 0"
+
+jobs:
+  build:
+    strategy:
+      matrix: 
+        architecture:
+          - x64
+          - arm64
+          - s390x
+          - ppc64le
+        version:
+          - 8
+          - 9
+        type:
+          - name: 'Container'
+            variant:
+              - Base
+          - name: 'Container'
+            variant:
+              - Minimal
+          - name: 'Container'
+            variant:
+              - UBI
+          - name: 'GenericCloud'
+          - name: 'EC2'
+          - name: 'Azure'
+          - name: 'OCP'
+        exclude:
+          - architecture: s390x
+            version: 8
+          - architecture: ppc64le
+            version: 8
+    runs-on: 
+      - self-hosted
+      - ${{ matrix.architecture }}
+    steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+        with:
+          platforms: "amd64,arm64,ppc64le,s390x"
+  
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build image using empanadas
+        uses: addnab/docker-run-action@v3
+        with:
+          image: docker://ghcr.io/rocky-linux/empanadas-imagefactory:latest 
+          run: |
+            export VARIANTS="$(test -z '${{ matrix.type.variant }}' && '' || '--variant ${{ matrix.type.variant }}')"
+            build-image --version ${{ matrix.version.major }} --type ${{ matrix.type.name }} ${VARIANTS} 
