@@ -50,14 +50,6 @@ jobs:
       - self-hosted
       - ${{ matrix.architecture }}
     steps:
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: "amd64,arm64,ppc64le,s390x"
-  
-      - name: Set up Docker Buildx
-        id: buildx
-        uses: docker/setup-buildx-action@v2
 
       - name: Build image using empanadas
         env:
