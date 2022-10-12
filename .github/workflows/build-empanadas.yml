@@ -25,22 +25,21 @@ jobs:
           - s390x
           - ppc64le
         version:
-          - 8
-          - 9
+          - major: 8
+            minor: 6
+          - major: 9
+            minor: 0
         type:
-          - name: 'Container'
-            variant:
-              - Base
-          - name: 'Container'
-            variant:
-              - Minimal
-          - name: 'Container'
-            variant:
-              - UBI
-          - name: 'GenericCloud'
-          - name: 'EC2'
-          - name: 'Azure'
-          - name: 'OCP'
+          - name: Container
+            variant: Base
+          - name: Container
+            variant: Minimal
+          - name: Container
+            variant: UBI
+          - name: GenericCloud
+          - name: EC2
+          - name: Azure
+          - name: OCP
         exclude:
           - architecture: s390x
             version: 8
@@ -56,8 +55,8 @@ jobs:
           IMAGE: ghcr.io/rocky-linux/empanadas-imagefactory:latest
           LIBVIRT_DEFAULT_URI:
         run: |
-          export VARIANTS="$(test -z '${{ matrix.type.variant }}' && '' || '--variant ${{ matrix.type.variant }}')"
-          export CMD="build-image --version ${{ matrix.version.major }} --type ${{ matrix.type.name }} ${VARIANTS}"
+          export VARIANT_ARGS="$(test -z '${{ matrix.type.variant }}' && '' || '--variant ${{ matrix.type.variant }}')"
+          export CMD="build-image --version ${{ matrix.version.major }} --type ${{ matrix.type.name }} ${VARIANT_ARGS}"
           sudo podman run --rm --privileged --security-opt label=disable --device fuse \
             -v /var/run/libvirt:/var/run/libvirt:rw -v /var/lib/imagefactory:/var/lib/imagefactory:rw \
             $CMD
