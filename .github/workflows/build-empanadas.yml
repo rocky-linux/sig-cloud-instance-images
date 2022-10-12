@@ -59,4 +59,4 @@ jobs:
           export CMD="build-image --version ${{ matrix.version.major }} --type ${{ matrix.type.name }} ${VARIANT_ARGS}"
           sudo podman run --rm --privileged --security-opt label=disable --device fuse \
             -v /var/run/libvirt:/var/run/libvirt:rw -v /var/lib/imagefactory:/var/lib/imagefactory:rw \
-            $CMD
+            $IMAGE $CMD
