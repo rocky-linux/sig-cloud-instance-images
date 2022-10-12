@@ -60,9 +60,12 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Build image using empanadas
-        uses: addnab/docker-run-action@v3
-        with:
-          image: docker://ghcr.io/rocky-linux/empanadas-imagefactory:latest 
-          run: |
-            export VARIANTS="$(test -z '${{ matrix.type.variant }}' && '' || '--variant ${{ matrix.type.variant }}')"
-            build-image --version ${{ matrix.version.major }} --type ${{ matrix.type.name }} ${VARIANTS} 
+        env:
+          IMAGE: ghcr.io/rocky-linux/empanadas-imagefactory:latest
+          LIBVIRT_DEFAULT_URI:
+        run: |
+          export VARIANTS="$(test -z '${{ matrix.type.variant }}' && '' || '--variant ${{ matrix.type.variant }}')"
+          export CMD="build-image --version ${{ matrix.version.major }} --type ${{ matrix.type.name }} ${VARIANTS}"
+          sudo podman run --rm --privileged --security-opt label=disable --device fuse \
+            -v /var/run/libvirt:/var/run/libvirt:rw -v /var/lib/imagefactory:/var/lib/imagefactory:rw \
+            $CMD
