@@ -64,6 +64,33 @@
               }
             },
             {
+              "id": "CVE-2022-40674",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-40674"
+              },
+              "fullDescription": {
+                "text": "libexpat before 2.4.9 has a use-after-free in the doContent function in xmlparse.c."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-40674",
+              "help": {
+                "text": "Vulnerability CVE-2022-40674\nSeverity: CRITICAL\nPackage: expat\nFixed Version: 2.2.5-8.el8_6.3\nLink: [CVE-2022-40674](https://avd.aquasec.com/nvd/cve-2022-40674)\nlibexpat before 2.4.9 has a use-after-free in the doContent function in xmlparse.c.",
+                "markdown": "**Vulnerability CVE-2022-40674**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|expat|2.2.5-8.el8_6.3|[CVE-2022-40674](https://avd.aquasec.com/nvd/cve-2022-40674)|\n\nlibexpat before 2.4.9 has a use-after-free in the doContent function in xmlparse.c."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "CRITICAL"
+                ]
+              }
+            },
+            {
               "id": "CVE-2022-34903",
               "name": "OsPackageVulnerability",
               "shortDescription": {
@@ -360,8 +387,32 @@
           ]
         },
         {
-          "ruleId": "CVE-2022-34903",
+          "ruleId": "CVE-2022-40674",
           "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Package: expat\nInstalled Version: 2.2.5-8.el8_6.2\nVulnerability CVE-2022-40674\nSeverity: CRITICAL\nFixed Version: 2.2.5-8.el8_6.3\nLink: [CVE-2022-40674](https://avd.aquasec.com/nvd/cve-2022-40674)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-34903",
+          "ruleIndex": 3,
           "level": "warning",
           "message": {
             "text": "Package: gnupg2\nInstalled Version: 2.2.20-2.el8\nVulnerability CVE-2022-34903\nSeverity: MEDIUM\nFixed Version: 2.2.20-3.el8_6\nLink: [CVE-2022-34903](https://avd.aquasec.com/nvd/cve-2022-34903)"
@@ -433,7 +484,7 @@
         },
         {
           "ruleId": "CVE-2022-1292",
-          "ruleIndex": 3,
+          "ruleIndex": 4,
           "level": "error",
           "message": {
             "text": "Package: openssl-libs\nInstalled Version: 1:1.1.1k-6.el8_5\nVulnerability CVE-2022-1292\nSeverity: CRITICAL\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-1292](https://avd.aquasec.com/nvd/cve-2022-1292)"
@@ -457,7 +508,7 @@
         },
         {
           "ruleId": "CVE-2022-2068",
-          "ruleIndex": 4,
+          "ruleIndex": 5,
           "level": "error",
           "message": {
             "text": "Package: openssl-libs\nInstalled Version: 1:1.1.1k-6.el8_5\nVulnerability CVE-2022-2068\nSeverity: CRITICAL\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-2068](https://avd.aquasec.com/nvd/cve-2022-2068)"
@@ -481,7 +532,7 @@
         },
         {
           "ruleId": "CVE-2022-2097",
-          "ruleIndex": 5,
+          "ruleIndex": 6,
           "level": "warning",
           "message": {
             "text": "Package: openssl-libs\nInstalled Version: 1:1.1.1k-6.el8_5\nVulnerability CVE-2022-2097\nSeverity: MEDIUM\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-2097](https://avd.aquasec.com/nvd/cve-2022-2097)"
@@ -505,7 +556,7 @@
         },
         {
           "ruleId": "CVE-2022-1586",
-          "ruleIndex": 6,
+          "ruleIndex": 7,
           "level": "error",
           "message": {
             "text": "Package: pcre2\nInstalled Version: 10.32-2.el8\nVulnerability CVE-2022-1586\nSeverity: CRITICAL\nFixed Version: 10.32-3.el8_6\nLink: [CVE-2022-1586](https://avd.aquasec.com/nvd/cve-2022-1586)"
@@ -529,7 +580,7 @@
         },
         {
           "ruleId": "CVE-2022-2526",
-          "ruleIndex": 7,
+          "ruleIndex": 8,
           "level": "error",
           "message": {
             "text": "Package: systemd\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: CRITICAL\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
@@ -553,7 +604,7 @@
         },
         {
           "ruleId": "CVE-2022-2526",
-          "ruleIndex": 7,
+          "ruleIndex": 8,
           "level": "error",
           "message": {
             "text": "Package: systemd-libs\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: CRITICAL\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
@@ -577,7 +628,7 @@
         },
         {
           "ruleId": "CVE-2022-2526",
-          "ruleIndex": 7,
+          "ruleIndex": 8,
           "level": "error",
           "message": {
             "text": "Package: systemd-pam\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: CRITICAL\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
@@ -601,7 +652,7 @@
         },
         {
           "ruleId": "CVE-2022-1927",
-          "ruleIndex": 8,
+          "ruleIndex": 9,
           "level": "error",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1927\nSeverity: CRITICAL\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)"
@@ -625,7 +676,7 @@
         },
         {
           "ruleId": "CVE-2022-1785",
-          "ruleIndex": 9,
+          "ruleIndex": 10,
           "level": "error",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1785\nSeverity: HIGH\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)"
@@ -649,7 +700,7 @@
         },
         {
           "ruleId": "CVE-2022-1897",
-          "ruleIndex": 10,
+          "ruleIndex": 11,
           "level": "error",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1897\nSeverity: HIGH\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)"
