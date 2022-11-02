@@ -118,6 +118,33 @@
               }
             },
             {
+              "id": "CVE-2022-2509",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "gnutls: Double free during gnutls_pkcs7_verify"
+              },
+              "fullDescription": {
+                "text": "A vulnerability found in gnutls. This security flaw happens because of a double free error occurs during verification of pkcs7 signatures in gnutls_pkcs7_verify function."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-2509",
+              "help": {
+                "text": "Vulnerability CVE-2022-2509\nSeverity: HIGH\nPackage: gnutls\nFixed Version: 3.6.16-5.el8_6\nLink: [CVE-2022-2509](https://avd.aquasec.com/nvd/cve-2022-2509)\nA vulnerability found in gnutls. This security flaw happens because of a double free error occurs during verification of pkcs7 signatures in gnutls_pkcs7_verify function.",
+                "markdown": "**Vulnerability CVE-2022-2509**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|gnutls|3.6.16-5.el8_6|[CVE-2022-2509](https://avd.aquasec.com/nvd/cve-2022-2509)|\n\nA vulnerability found in gnutls. This security flaw happens because of a double free error occurs during verification of pkcs7 signatures in gnutls_pkcs7_verify function."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "7.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
               "id": "CVE-2022-1292",
               "name": "OsPackageVulnerability",
               "shortDescription": {
@@ -226,6 +253,60 @@
               }
             },
             {
+              "id": "CVE-2020-35527",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "sqlite: Out of bounds access during table rename"
+              },
+              "fullDescription": {
+                "text": "In SQLite 3.31.1, there is an out of bounds access problem through ALTER TABLE for views that have a nested FROM clause."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-35527",
+              "help": {
+                "text": "Vulnerability CVE-2020-35527\nSeverity: CRITICAL\nPackage: sqlite-libs\nFixed Version: 3.26.0-16.el8_6\nLink: [CVE-2020-35527](https://avd.aquasec.com/nvd/cve-2020-35527)\nIn SQLite 3.31.1, there is an out of bounds access problem through ALTER TABLE for views that have a nested FROM clause.",
+                "markdown": "**Vulnerability CVE-2020-35527**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|sqlite-libs|3.26.0-16.el8_6|[CVE-2020-35527](https://avd.aquasec.com/nvd/cve-2020-35527)|\n\nIn SQLite 3.31.1, there is an out of bounds access problem through ALTER TABLE for views that have a nested FROM clause."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "CRITICAL"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2020-35525",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "sqlite: Null pointer derreference in src/select.c"
+              },
+              "fullDescription": {
+                "text": "In SQlite 3.31.1, a potential null pointer derreference was found in the INTERSEC query processing."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-35525",
+              "help": {
+                "text": "Vulnerability CVE-2020-35525\nSeverity: HIGH\nPackage: sqlite-libs\nFixed Version: 3.26.0-16.el8_6\nLink: [CVE-2020-35525](https://avd.aquasec.com/nvd/cve-2020-35525)\nIn SQlite 3.31.1, a potential null pointer derreference was found in the INTERSEC query processing.",
+                "markdown": "**Vulnerability CVE-2020-35525**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|sqlite-libs|3.26.0-16.el8_6|[CVE-2020-35525](https://avd.aquasec.com/nvd/cve-2020-35525)|\n\nIn SQlite 3.31.1, a potential null pointer derreference was found in the INTERSEC query processing."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "7.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
               "id": "CVE-2022-2526",
               "name": "OsPackageVulnerability",
               "shortDescription": {
@@ -330,6 +411,33 @@
                   "vulnerability",
                   "security",
                   "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-37434",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "zlib: heap-based buffer over-read and overflow in inflate() in inflate.c via a large gzip header extra field"
+              },
+              "fullDescription": {
+                "text": "zlib through 1.2.12 has a heap-based buffer over-read or buffer overflow in inflate in inflate.c via a large gzip header extra field. NOTE: only applications that call inflateGetHeader are affected. Some common applications bundle the affected zlib source code but may be unable to call inflateGetHeader (e.g., see the nodejs/node reference)."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-37434",
+              "help": {
+                "text": "Vulnerability CVE-2022-37434\nSeverity: CRITICAL\nPackage: zlib\nFixed Version: 1.2.11-19.el8_6\nLink: [CVE-2022-37434](https://avd.aquasec.com/nvd/cve-2022-37434)\nzlib through 1.2.12 has a heap-based buffer over-read or buffer overflow in inflate in inflate.c via a large gzip header extra field. NOTE: only applications that call inflateGetHeader are affected. Some common applications bundle the affected zlib source code but may be unable to call inflateGetHeader (e.g., see the nodejs/node reference).",
+                "markdown": "**Vulnerability CVE-2022-37434**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|zlib|1.2.11-19.el8_6|[CVE-2022-37434](https://avd.aquasec.com/nvd/cve-2022-37434)|\n\nzlib through 1.2.12 has a heap-based buffer over-read or buffer overflow in inflate in inflate.c via a large gzip header extra field. NOTE: only applications that call inflateGetHeader are affected. Some common applications bundle the affected zlib source code but may be unable to call inflateGetHeader (e.g., see the nodejs/node reference)."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "CRITICAL"
                 ]
               }
             }
@@ -447,6 +555,33 @@
           ]
         },
         {
+          "ruleId": "CVE-2022-2509",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Package: gnutls\nInstalled Version: 3.6.16-4.el8\nVulnerability CVE-2022-2509\nSeverity: HIGH\nFixed Version: 3.6.16-5.el8_6\nLink: [CVE-2022-2509](https://avd.aquasec.com/nvd/cve-2022-2509)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: gnutls@3.6.16-4.el8"
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "CVE-2022-32206",
           "ruleIndex": 0,
           "level": "warning",
@@ -502,7 +637,7 @@
         },
         {
           "ruleId": "CVE-2022-1292",
-          "ruleIndex": 4,
+          "ruleIndex": 5,
           "level": "error",
           "message": {
             "text": "Package: openssl-libs\nInstalled Version: 1:1.1.1k-6.el8_5\nVulnerability CVE-2022-1292\nSeverity: CRITICAL\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-1292](https://avd.aquasec.com/nvd/cve-2022-1292)"
@@ -529,7 +664,7 @@
         },
         {
           "ruleId": "CVE-2022-2068",
-          "ruleIndex": 5,
+          "ruleIndex": 6,
           "level": "error",
           "message": {
             "text": "Package: openssl-libs\nInstalled Version: 1:1.1.1k-6.el8_5\nVulnerability CVE-2022-2068\nSeverity: CRITICAL\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-2068](https://avd.aquasec.com/nvd/cve-2022-2068)"
@@ -556,7 +691,7 @@
         },
         {
           "ruleId": "CVE-2022-2097",
-          "ruleIndex": 6,
+          "ruleIndex": 7,
           "level": "warning",
           "message": {
             "text": "Package: openssl-libs\nInstalled Version: 1:1.1.1k-6.el8_5\nVulnerability CVE-2022-2097\nSeverity: MEDIUM\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-2097](https://avd.aquasec.com/nvd/cve-2022-2097)"
@@ -583,7 +718,7 @@
         },
         {
           "ruleId": "CVE-2022-1586",
-          "ruleIndex": 7,
+          "ruleIndex": 8,
           "level": "error",
           "message": {
             "text": "Package: pcre2\nInstalled Version: 10.32-2.el8\nVulnerability CVE-2022-1586\nSeverity: CRITICAL\nFixed Version: 10.32-3.el8_6\nLink: [CVE-2022-1586](https://avd.aquasec.com/nvd/cve-2022-1586)"
@@ -609,8 +744,62 @@
           ]
         },
         {
+          "ruleId": "CVE-2020-35527",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Package: sqlite-libs\nInstalled Version: 3.26.0-15.el8\nVulnerability CVE-2020-35527\nSeverity: CRITICAL\nFixed Version: 3.26.0-16.el8_6\nLink: [CVE-2020-35527](https://avd.aquasec.com/nvd/cve-2020-35527)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: sqlite-libs@3.26.0-15.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2020-35525",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Package: sqlite-libs\nInstalled Version: 3.26.0-15.el8\nVulnerability CVE-2020-35525\nSeverity: HIGH\nFixed Version: 3.26.0-16.el8_6\nLink: [CVE-2020-35525](https://avd.aquasec.com/nvd/cve-2020-35525)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: sqlite-libs@3.26.0-15.el8"
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "CVE-2022-2526",
-          "ruleIndex": 8,
+          "ruleIndex": 11,
           "level": "error",
           "message": {
             "text": "Package: systemd\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: CRITICAL\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
@@ -637,7 +826,7 @@
         },
         {
           "ruleId": "CVE-2022-2526",
-          "ruleIndex": 8,
+          "ruleIndex": 11,
           "level": "error",
           "message": {
             "text": "Package: systemd-libs\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: CRITICAL\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
@@ -664,7 +853,7 @@
         },
         {
           "ruleId": "CVE-2022-2526",
-          "ruleIndex": 8,
+          "ruleIndex": 11,
           "level": "error",
           "message": {
             "text": "Package: systemd-pam\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: CRITICAL\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
@@ -691,7 +880,7 @@
         },
         {
           "ruleId": "CVE-2022-1785",
-          "ruleIndex": 9,
+          "ruleIndex": 12,
           "level": "error",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1785\nSeverity: HIGH\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)"
@@ -718,7 +907,7 @@
         },
         {
           "ruleId": "CVE-2022-1897",
-          "ruleIndex": 10,
+          "ruleIndex": 13,
           "level": "error",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1897\nSeverity: HIGH\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)"
@@ -745,7 +934,7 @@
         },
         {
           "ruleId": "CVE-2022-1927",
-          "ruleIndex": 11,
+          "ruleIndex": 14,
           "level": "error",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1927\nSeverity: HIGH\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)"
@@ -766,6 +955,33 @@
               },
               "message": {
                 "text": "rockylinux/rockylinux: vim-minimal@2:8.0.1763-19.el8_6.2"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-37434",
+          "ruleIndex": 15,
+          "level": "error",
+          "message": {
+            "text": "Package: zlib\nInstalled Version: 1.2.11-18.el8_5\nVulnerability CVE-2022-37434\nSeverity: CRITICAL\nFixed Version: 1.2.11-19.el8_6\nLink: [CVE-2022-37434](https://avd.aquasec.com/nvd/cve-2022-37434)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: zlib@1.2.11-18.el8_5"
               }
             }
           ]
