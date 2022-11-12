@@ -38,8 +38,17 @@ jobs:
           - name: Container
             variant: UBI
           - name: GenericCloud
+            variant: Base
+          - name: GenericCloud
+            variant: LVM
           - name: EC2
+            variant: Base
+          - name: EC2
+            variant: LVM
           - name: Azure
+            variant: Base
+          - name: Azure
+            variant: LVM
           - name: OCP
         exclude:
           - architecture: s390x
@@ -48,6 +57,18 @@ jobs:
           - architecture: ppc64le
             version:
               major: 8
+          - architecture: s390x
+            name: EC2
+          - architecture: ppc64le
+            name: EC2
+          - architecture: s390x
+            name: OCP
+          - architecture: ppc64le
+            name: OCP
+          - architecture: s390x
+            name: Azure
+          - architecture: ppc64le
+            name: Azure
     runs-on: 
       - self-hosted
       - ${{ matrix.architecture }}
