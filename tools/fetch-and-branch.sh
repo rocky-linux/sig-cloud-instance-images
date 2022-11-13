@@ -39,10 +39,6 @@ case "$type" in
     ;;
 esac
 
-
-
-pattern=$(printf "Rocky-%s.%s-%s-%s" "$version" "$date" "$type" "$arch")
-
 has-branch(){
   local res=$(log-cmd git branch --list "$1")
   if [[ -z $res ]]; then
@@ -84,11 +80,25 @@ generate-filelist() {
 }
 
 latest-build() {
- local path=$(printf "s3://resf-empanadas/buildimage-%s-%s/Rocky-%s-Container-%s-%s-%s.%s.%s" $version $arch $major $type $version $date $revision $arch)
- local res=$(log-cmd aws --region us-east-2 --profile resf-peridot-prod s3 ls --recursive "$path" | sort | tail -1 | awk '{print $4}' | sed 's,^\(.*\)/.*$,\1,g')
- echo "$res"
- return 0
+  local path=$(printf "s3://resf-empanadas/buildimage-%s-%s/Rocky-%s-Container-%s-%s-%s.%s.%s" $version $arch $major $type $version $date $revision $arch)
+  local res=$(log-cmd aws --region us-east-2 --profile resf-peridot-prod s3 ls --recursive "$path" | sort | tail -1 | awk '{print $4}' | sed 's,^\(.*\)/.*$,\1,g')
+  echo "$res"
+  return 0
 }
+
+build-container-manifests() {
+  local destinations=("docker.io/rockylinux/rockylinux" "quay.io/rockylinux/rockylinux")
+  local tags=("$version" "${version}.${date}")
+  local final_tags=""
+  for d in "${destinations[@]}"; do
+    for t in "${tags[@]}"; do
+      final_tags="$(printf '%s,%s:%s' $d $t)"
+    done
+  done
+  echo $final_tags
+}
+
+pattern=$(printf "Rocky-%s.%s-%s-%s" "$version" "$date" "$type" "$arch")
 
 if has-branch $pattern; then
   usage "Branch ${pattern} already exists. Exiting."
@@ -118,3 +128,5 @@ log-cmd aws --region us-east-2 --profile resf-peridot-prod s3 sync "s3://resf-em
 
 generate-packagelist
 generate-filelist
+
+build-container-manifests
