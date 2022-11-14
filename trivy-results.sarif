@@ -145,6 +145,87 @@
               }
             },
             {
+              "id": "CVE-2022-1304",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "e2fsprogs: out-of-bounds read/write via crafted filesystem"
+              },
+              "fullDescription": {
+                "text": "An out-of-bounds read/write vulnerability was found in e2fsprogs 1.46.5. This issue leads to a segmentation fault and possibly arbitrary code execution via a specially crafted filesystem."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-1304",
+              "help": {
+                "text": "Vulnerability CVE-2022-1304\nSeverity: HIGH\nPackage: libcom_err\nFixed Version: 1.45.6-5.el8\nLink: [CVE-2022-1304](https://avd.aquasec.com/nvd/cve-2022-1304)\nAn out-of-bounds read/write vulnerability was found in e2fsprogs 1.46.5. This issue leads to a segmentation fault and possibly arbitrary code execution via a specially crafted filesystem.",
+                "markdown": "**Vulnerability CVE-2022-1304**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|libcom_err|1.45.6-5.el8|[CVE-2022-1304](https://avd.aquasec.com/nvd/cve-2022-1304)|\n\nAn out-of-bounds read/write vulnerability was found in e2fsprogs 1.46.5. This issue leads to a segmentation fault and possibly arbitrary code execution via a specially crafted filesystem."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "7.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-3515",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "libksba: integer overflow may lead to remote code execution"
+              },
+              "fullDescription": {
+                "text": "A vulnerability was found in the Libksba library due to an integer overflow within the CRL parser. The vulnerability can be exploited remotely for code execution on the target system by passing specially crafted data to the application, for example, a malicious S/MIME attachment."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-3515",
+              "help": {
+                "text": "Vulnerability CVE-2022-3515\nSeverity: HIGH\nPackage: libksba\nFixed Version: 1.3.5-8.el8_6\nLink: [CVE-2022-3515](https://avd.aquasec.com/nvd/cve-2022-3515)\nA vulnerability was found in the Libksba library due to an integer overflow within the CRL parser. The vulnerability can be exploited remotely for code execution on the target system by passing specially crafted data to the application, for example, a malicious S/MIME attachment.",
+                "markdown": "**Vulnerability CVE-2022-3515**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|libksba|1.3.5-8.el8_6|[CVE-2022-3515](https://avd.aquasec.com/nvd/cve-2022-3515)|\n\nA vulnerability was found in the Libksba library due to an integer overflow within the CRL parser. The vulnerability can be exploited remotely for code execution on the target system by passing specially crafted data to the application, for example, a malicious S/MIME attachment."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2016-3709",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "libxml2: Incorrect server side include parsing can lead to XSS"
+              },
+              "fullDescription": {
+                "text": "Possible cross-site scripting vulnerability in libxml after commit 960f0e2."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2016-3709",
+              "help": {
+                "text": "Vulnerability CVE-2016-3709\nSeverity: MEDIUM\nPackage: libxml2\nFixed Version: 2.9.7-15.el8\nLink: [CVE-2016-3709](https://avd.aquasec.com/nvd/cve-2016-3709)\nPossible cross-site scripting vulnerability in libxml after commit 960f0e2.",
+                "markdown": "**Vulnerability CVE-2016-3709**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libxml2|2.9.7-15.el8|[CVE-2016-3709](https://avd.aquasec.com/nvd/cve-2016-3709)|\n\nPossible cross-site scripting vulnerability in libxml after commit 960f0e2."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "6.1",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
               "id": "CVE-2022-1292",
               "name": "OsPackageVulnerability",
               "shortDescription": {
@@ -582,6 +663,33 @@
           ]
         },
         {
+          "ruleId": "CVE-2022-1304",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Package: libcom_err\nInstalled Version: 1.45.6-4.el8\nVulnerability CVE-2022-1304\nSeverity: HIGH\nFixed Version: 1.45.6-5.el8\nLink: [CVE-2022-1304](https://avd.aquasec.com/nvd/cve-2022-1304)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: libcom_err@1.45.6-4.el8"
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "CVE-2022-32206",
           "ruleIndex": 0,
           "level": "warning",
@@ -636,8 +744,62 @@
           ]
         },
         {
+          "ruleId": "CVE-2022-3515",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Package: libksba\nInstalled Version: 1.3.5-7.el8\nVulnerability CVE-2022-3515\nSeverity: HIGH\nFixed Version: 1.3.5-8.el8_6\nLink: [CVE-2022-3515](https://avd.aquasec.com/nvd/cve-2022-3515)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: libksba@1.3.5-7.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2016-3709",
+          "ruleIndex": 7,
+          "level": "warning",
+          "message": {
+            "text": "Package: libxml2\nInstalled Version: 2.9.7-13.el8_6.1\nVulnerability CVE-2016-3709\nSeverity: MEDIUM\nFixed Version: 2.9.7-15.el8\nLink: [CVE-2016-3709](https://avd.aquasec.com/nvd/cve-2016-3709)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: libxml2@2.9.7-13.el8_6.1"
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "CVE-2022-1292",
-          "ruleIndex": 5,
+          "ruleIndex": 8,
           "level": "error",
           "message": {
             "text": "Package: openssl-libs\nInstalled Version: 1:1.1.1k-6.el8_5\nVulnerability CVE-2022-1292\nSeverity: CRITICAL\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-1292](https://avd.aquasec.com/nvd/cve-2022-1292)"
@@ -664,7 +826,7 @@
         },
         {
           "ruleId": "CVE-2022-2068",
-          "ruleIndex": 6,
+          "ruleIndex": 9,
           "level": "error",
           "message": {
             "text": "Package: openssl-libs\nInstalled Version: 1:1.1.1k-6.el8_5\nVulnerability CVE-2022-2068\nSeverity: CRITICAL\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-2068](https://avd.aquasec.com/nvd/cve-2022-2068)"
@@ -691,7 +853,7 @@
         },
         {
           "ruleId": "CVE-2022-2097",
-          "ruleIndex": 7,
+          "ruleIndex": 10,
           "level": "warning",
           "message": {
             "text": "Package: openssl-libs\nInstalled Version: 1:1.1.1k-6.el8_5\nVulnerability CVE-2022-2097\nSeverity: MEDIUM\nFixed Version: 1:1.1.1k-7.el8_6\nLink: [CVE-2022-2097](https://avd.aquasec.com/nvd/cve-2022-2097)"
@@ -718,7 +880,7 @@
         },
         {
           "ruleId": "CVE-2022-1586",
-          "ruleIndex": 8,
+          "ruleIndex": 11,
           "level": "error",
           "message": {
             "text": "Package: pcre2\nInstalled Version: 10.32-2.el8\nVulnerability CVE-2022-1586\nSeverity: CRITICAL\nFixed Version: 10.32-3.el8_6\nLink: [CVE-2022-1586](https://avd.aquasec.com/nvd/cve-2022-1586)"
@@ -745,7 +907,7 @@
         },
         {
           "ruleId": "CVE-2020-35527",
-          "ruleIndex": 9,
+          "ruleIndex": 12,
           "level": "error",
           "message": {
             "text": "Package: sqlite-libs\nInstalled Version: 3.26.0-15.el8\nVulnerability CVE-2020-35527\nSeverity: CRITICAL\nFixed Version: 3.26.0-16.el8_6\nLink: [CVE-2020-35527](https://avd.aquasec.com/nvd/cve-2020-35527)"
@@ -772,7 +934,7 @@
         },
         {
           "ruleId": "CVE-2020-35525",
-          "ruleIndex": 10,
+          "ruleIndex": 13,
           "level": "error",
           "message": {
             "text": "Package: sqlite-libs\nInstalled Version: 3.26.0-15.el8\nVulnerability CVE-2020-35525\nSeverity: HIGH\nFixed Version: 3.26.0-16.el8_6\nLink: [CVE-2020-35525](https://avd.aquasec.com/nvd/cve-2020-35525)"
@@ -799,7 +961,7 @@
         },
         {
           "ruleId": "CVE-2022-2526",
-          "ruleIndex": 11,
+          "ruleIndex": 14,
           "level": "error",
           "message": {
             "text": "Package: systemd\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: CRITICAL\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
@@ -826,7 +988,7 @@
         },
         {
           "ruleId": "CVE-2022-2526",
-          "ruleIndex": 11,
+          "ruleIndex": 14,
           "level": "error",
           "message": {
             "text": "Package: systemd-libs\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: CRITICAL\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
@@ -853,7 +1015,7 @@
         },
         {
           "ruleId": "CVE-2022-2526",
-          "ruleIndex": 11,
+          "ruleIndex": 14,
           "level": "error",
           "message": {
             "text": "Package: systemd-pam\nInstalled Version: 239-58.el8\nVulnerability CVE-2022-2526\nSeverity: CRITICAL\nFixed Version: 239-58.el8_6.4\nLink: [CVE-2022-2526](https://avd.aquasec.com/nvd/cve-2022-2526)"
@@ -880,7 +1042,7 @@
         },
         {
           "ruleId": "CVE-2022-1785",
-          "ruleIndex": 12,
+          "ruleIndex": 15,
           "level": "error",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1785\nSeverity: HIGH\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1785](https://avd.aquasec.com/nvd/cve-2022-1785)"
@@ -907,7 +1069,7 @@
         },
         {
           "ruleId": "CVE-2022-1897",
-          "ruleIndex": 13,
+          "ruleIndex": 16,
           "level": "error",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1897\nSeverity: HIGH\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1897](https://avd.aquasec.com/nvd/cve-2022-1897)"
@@ -934,7 +1096,7 @@
         },
         {
           "ruleId": "CVE-2022-1927",
-          "ruleIndex": 14,
+          "ruleIndex": 17,
           "level": "error",
           "message": {
             "text": "Package: vim-minimal\nInstalled Version: 2:8.0.1763-19.el8_6.2\nVulnerability CVE-2022-1927\nSeverity: HIGH\nFixed Version: 2:8.0.1763-19.el8_6.4\nLink: [CVE-2022-1927](https://avd.aquasec.com/nvd/cve-2022-1927)"
@@ -961,7 +1123,7 @@
         },
         {
           "ruleId": "CVE-2022-37434",
-          "ruleIndex": 15,
+          "ruleIndex": 18,
           "level": "error",
           "message": {
             "text": "Package: zlib\nInstalled Version: 1.2.11-18.el8_5\nVulnerability CVE-2022-37434\nSeverity: CRITICAL\nFixed Version: 1.2.11-19.el8_6\nLink: [CVE-2022-37434](https://avd.aquasec.com/nvd/cve-2022-37434)"
