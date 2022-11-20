@@ -16,9 +16,6 @@ usage() {
 # shellcheck disable=SC2046,1091,1090
 source "$(dirname "${BASH_SOURCE[0]}")/common.sh"
 
-
-# find branches LIKE pattern
-# generate template
 name="Rocky-${version}.${date}-${type}"
 
 arches=(x86_64 aarch64)
@@ -32,7 +29,6 @@ case $type in
   *)
     suffix='';;
 esac
-
 
 declare -A shasums
 
