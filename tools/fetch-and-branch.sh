@@ -10,123 +10,109 @@ major=${1:0:1}
 minor=${1:2:1}
 TEMPLATE="library-template"
 
-
 usage() {
   printf "%s: RELEASE TYPE ARCH [DATE]\n\n" $0
   log "$1"
 }
 
-log() {
-  printf "[%s] :: %s\n" "$(date -Isec)" "$1"
-}
-
-log-cmd() {
-  set -x
-  command $@
-  set +x
-}
-
-if [[ -z "$version" || ! "$version" =~ [0-9]+.[0-9]+ ]]; then
-  usage "Invalid or empty version"
-  exit 1
-fi
-
-case "$type" in
-  Base|Minimal|UBI) ;;
-  *) 
-    usage "Invalid type"
-    exit 1
-    ;;
-esac
-
-has-branch(){
-  local res=$(log-cmd git branch --list "$1")
-  if [[ -z $res ]]; then
-    return 1
-  fi
-  return 0
-}
-
-current-branch() {
-  local res=$(log-cmd git branch --show-current)
-  ret=0
-  if [[ ! -z $res ]]; then
-    ret=1
-  fi
-  echo $res
-  return $ret
-}
-
-generate-packagelist() {
-  log "Generating package list"
-  if [[ -f build.meta ]]; then
-    log-cmd xmllint --xpath "//packages/*/@name" <(printf "$(jq '.icicle' < build.meta)\n" | tr -d '\\' | tail -c +2 | head -c -2) | \
-      awk -F\= '{print substr($2,2,length($2)-2)}' | \
-      sort > packages.txt
-    return $?
-  fi
-  log "No build.meta found. Skipping packagelist generation"
-  return 1
-}
-
-generate-filelist() {
-  log "Generating filelist"
-  if [[ -f layer.tar.xz ]]; then
-    log-cmd tar -tf layer.tar.xz > filelist.txt
-    return $?
-  fi
-  log "No layer.tar.xz found. Skipping filelist generation"
-  return 1
-}
-
-latest-build() {
-  local path=$(printf "s3://resf-empanadas/buildimage-%s-%s/Rocky-%s-Container-%s-%s-%s.%s.%s" $version $arch $major $type $version $date $revision $arch)
-  local res=$(log-cmd aws --region us-east-2 --profile resf-peridot-prod s3 ls --recursive "$path" | sort | tail -1 | awk '{print $4}' | sed 's,^\(.*\)/.*$,\1,g')
-  echo "$res"
-  return 0
-}
+# shellcheck disable=SC2046,1091,1090
+source "$(dirname "${BASH_SOURCE[0]}")/common.sh"
 
 build-container-manifests() {
-  local destinations=("docker.io/rockylinux/rockylinux" "quay.io/rockylinux/rockylinux")
-  local tags=("$version" "${version}.${date}")
-  local final_tags=""
-  for d in "${destinations[@]}"; do
-    for t in "${tags[@]}"; do
-      final_tags="$(printf '%s,%s:%s' $d $t)"
-    done
-  done
-  echo $final_tags
+
+  case "$arch" in
+    x86_64)
+      build_args="--os linux --arch amd64 " ;;
+    aarch64)
+      build_args="--os linux --arch arm64 --variant v8" ;;
+    *) echo "invalid arch"; exit;;
+  esac
+
+  # don't bother tagging the  intermediary container as we will just capture its shasum
+  container_shasum=$(podman build -q $build_args .)
+  pRes=$?
+  if [[ $pRes -gt 0 ]]; then
+    echo "failed to build container. exiting"
+    exit $pRes
+  fi
+
+  # Manifest tags need one per type (base/minimal/etc), and contain two architectures (for 8, 9 will ultimately have 4+)
+  if ! podman manifest exists "$manifest_tag"; then
+    podman manifest create "$manifest_tag"
+    pRes=$?
+    if [[ $pRes -gt 0 ]]; then
+      echo "Failed to create manifest"
+      exit $pRes 
+    fi
+  else
+    echo "manifest exists. adding will overwrite existing platform tuple in manifest, if exists."
+  fi
+
+  podman manifest add $manifest_tag containers-storage:$container_shasum $build_args
+  pRes=$?
+  if [[ $pRes -gt 0 ]]; then
+    echo "Failed to add container image to manifest"
+    exit $pRes 
+  fi
+
+  echo
+  echo "when all images have been added to the manifest, the manifests must be pushed to their locations."
+  echo "***Only push the bar MAJOR version tag (8,9) when the OS has been fully released.***"
+  echo
+
 }
 
-pattern=$(printf "Rocky-%s.%s-%s-%s" "$version" "$date" "$type" "$arch")
+manifest-push-commands (){
+  local destinations=("docker.io/rockylinux/rockylinux" "quay.io/rockylinux/rockylinux")
+  local tags=("$version" "${version}.${date}")
+  local final_tags=()
+  for d in "${destinations[@]}"; do
+    for t in "${tags[@]}"; do
+      final_tags=(${final_tags[@]} "$d:$t")
+    done
+  done
 
-if has-branch $pattern; then
-  usage "Branch ${pattern} already exists. Exiting."
-  exit 1
-fi
+  for t in "${final_tags[@]}"; do
+    printf "podman manifest push %s %s\n" $manifest_tag $t
+  done
+}
 
-log "Creating branch ${pattern}"
 
-log-cmd git checkout -b "${pattern}" $TEMPLATE
+check-and-download (){
+  if has-branch $pattern; then
+    usage "Branch ${pattern} already exists. Exiting."
+    exit 1
+  fi
 
-branch=$(current-branch)
-if [[ "${branch}" != "${pattern}" ]]; then
-  log "Not on the proper branch after creation. Exiting for safety."
-  exit 127
-fi
+  log "Creating branch ${pattern}"
 
-# Clear the history of the branch (Required for Docker Hub Official Images to only have one commit on the branch)
-log-cmd git update-ref -d HEAD
+  log-cmd git checkout -b "${pattern}" $TEMPLATE
 
-builddir=$(latest-build)
-if [[ -z "$builddir" ]]; then
-  log "Builddir not found. Exiting"
-  exit 3
-fi
+  branch=$(current-branch)
+  if [[ "${branch}" != "${pattern}" ]]; then
+    log "Not on the proper branch after creation. Exiting for safety."
+    exit 127
+  fi
 
-log-cmd aws --region us-east-2 --profile resf-peridot-prod s3 sync "s3://resf-empanadas/$builddir" $PWD
+  # Clear the history of the branch (Required for Docker Hub Official Images to only have one commit on the branch)
+  log-cmd git update-ref -d HEAD
 
-generate-packagelist
-generate-filelist
+  builddir=$(latest-build)
+  if [[ -z "$builddir" ]]; then
+    log "Builddir not found. Exiting"
+    exit 3
+  fi
 
+  log-cmd aws --region us-east-2 --profile resf-peridot-prod s3 sync "s3://resf-empanadas/$builddir" $PWD
+
+  generate-packagelist
+  generate-filelist
+}
+
+check-and-download
 build-container-manifests
+
+git add .
+git commit -S -m "Rocky Linux Container Image - $branch"
+
+manifest-push-commands
