@@ -19,6 +19,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/common.sh"
 name="Rocky-${version}.${date}-${type}"
 
 arches=(x86_64 aarch64)
+set -x
 if [[ $major -ge 9 ]]; then
   arches=(${arches[@]} s390x ppc64le)
 fi
@@ -45,6 +46,10 @@ GitFetch: refs/heads/${name}-x86_64
 GitCommit: ${shasums[x86_64]}
 arm64v8-GitFetch: refs/heads/${name}-aarch64
 arm64v8-GitCommit: ${shasums[aarch64]}
-Architectures: amd64, arm64v8
+s390x-GitFetch: refs/heads/${name}-s390x
+s390x-GitCommit: ${shasums[s390x]}
+ppc64le-GitFetch: refs/heads/${name}-ppc64le
+ppc64le-GitCommit: ${shasums[ppc64le]}
+Architectures: amd64, arm64v8, ppc64le, s390x
 EOF
 

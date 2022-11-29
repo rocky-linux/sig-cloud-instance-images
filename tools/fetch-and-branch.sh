@@ -25,6 +25,10 @@ build-container-manifests() {
       build_args="--os linux --arch amd64 " ;;
     aarch64)
       build_args="--os linux --arch arm64 --variant v8" ;;
+    s390x)
+      build_args="--os linux --arch s390x" ;;
+    ppc64le)
+      build_args="--os linux --arch ppc64le" ;;
     *) echo "invalid arch"; exit;;
   esac
 
