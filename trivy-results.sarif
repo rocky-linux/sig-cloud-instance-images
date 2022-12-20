@@ -8,67 +8,11 @@
           "fullName": "Trivy Vulnerability Scanner",
           "informationUri": "https://github.com/aquasecurity/trivy",
           "name": "Trivy",
-          "rules": [
-            {
-              "id": "CVE-2022-42898",
-              "name": "OsPackageVulnerability",
-              "shortDescription": {
-                "text": "krb5: integer overflow vulnerabilities in PAC parsing"
-              },
-              "fullDescription": {
-                "text": "A vulnerability was found in MIT krb5. This flaw allows an authenticated attacker to cause a KDC or kadmind process to crash by reading beyond the bounds of allocated memory, creating a denial of service. A privileged attacker may similarly be able to cause a Kerberos or GSS application service to crash."
-              },
-              "defaultConfiguration": {
-                "level": "warning"
-              },
-              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-42898",
-              "help": {
-                "text": "Vulnerability CVE-2022-42898\nSeverity: MEDIUM\nPackage: krb5-libs\nFixed Version: 1.18.2-22.el8_7\nLink: [CVE-2022-42898](https://avd.aquasec.com/nvd/cve-2022-42898)\nA vulnerability was found in MIT krb5. This flaw allows an authenticated attacker to cause a KDC or kadmind process to crash by reading beyond the bounds of allocated memory, creating a denial of service. A privileged attacker may similarly be able to cause a Kerberos or GSS application service to crash.",
-                "markdown": "**Vulnerability CVE-2022-42898**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|krb5-libs|1.18.2-22.el8_7|[CVE-2022-42898](https://avd.aquasec.com/nvd/cve-2022-42898)|\n\nA vulnerability was found in MIT krb5. This flaw allows an authenticated attacker to cause a KDC or kadmind process to crash by reading beyond the bounds of allocated memory, creating a denial of service. A privileged attacker may similarly be able to cause a Kerberos or GSS application service to crash."
-              },
-              "properties": {
-                "precision": "very-high",
-                "security-severity": "5.5",
-                "tags": [
-                  "vulnerability",
-                  "security",
-                  "MEDIUM"
-                ]
-              }
-            }
-          ],
+          "rules": [],
           "version": "0.34.0"
         }
       },
-      "results": [
-        {
-          "ruleId": "CVE-2022-42898",
-          "ruleIndex": 0,
-          "level": "warning",
-          "message": {
-            "text": "Package: krb5-libs\nInstalled Version: 1.18.2-21.el8\nVulnerability CVE-2022-42898\nSeverity: MEDIUM\nFixed Version: 1.18.2-22.el8_7\nLink: [CVE-2022-42898](https://avd.aquasec.com/nvd/cve-2022-42898)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "rockylinux/rockylinux",
-                  "uriBaseId": "ROOTPATH"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "message": {
-                "text": "rockylinux/rockylinux: krb5-libs@1.18.2-21.el8"
-              }
-            }
-          ]
-        }
-      ],
+      "results": [],
       "columnKind": "utf16CodeUnits",
       "originalUriBaseIds": {
         "ROOTPATH": {
