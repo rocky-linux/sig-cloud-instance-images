@@ -13,7 +13,7 @@
               "id": "CVE-2022-40897",
               "name": "LanguageSpecificPackageVulnerability",
               "shortDescription": {
-                "text": "pypa/setuptools vulnerable to Regular Expression Denial of Service (ReDoS)"
+                "text": "CVE-2022-40897 affecting package python-setuptools 40.2.0-6"
               },
               "fullDescription": {
                 "text": "Python Packaging Authority (PyPA) setuptools before 65.5.1 allows remote attackers to cause a denial of service via HTML in a crafted package or custom PackageIndex page. There is a Regular Expression Denial of Service (ReDoS) in package_index.py."
