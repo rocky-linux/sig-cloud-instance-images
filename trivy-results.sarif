@@ -8,67 +8,11 @@
           "fullName": "Trivy Vulnerability Scanner",
           "informationUri": "https://github.com/aquasecurity/trivy",
           "name": "Trivy",
-          "rules": [
-            {
-              "id": "CVE-2022-40897",
-              "name": "LanguageSpecificPackageVulnerability",
-              "shortDescription": {
-                "text": "pypa-setuptools: Regular Expression Denial of Service (ReDoS) in package_index.py"
-              },
-              "fullDescription": {
-                "text": "Python Packaging Authority (PyPA) setuptools before 65.5.1 allows remote attackers to cause a denial of service via HTML in a crafted package or custom PackageIndex page. There is a Regular Expression Denial of Service (ReDoS) in package_index.py."
-              },
-              "defaultConfiguration": {
-                "level": "error"
-              },
-              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-40897",
-              "help": {
-                "text": "Vulnerability CVE-2022-40897\nSeverity: HIGH\nPackage: setuptools\nFixed Version: 65.5.1\nLink: [CVE-2022-40897](https://avd.aquasec.com/nvd/cve-2022-40897)\nPython Packaging Authority (PyPA) setuptools before 65.5.1 allows remote attackers to cause a denial of service via HTML in a crafted package or custom PackageIndex page. There is a Regular Expression Denial of Service (ReDoS) in package_index.py.",
-                "markdown": "**Vulnerability CVE-2022-40897**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|setuptools|65.5.1|[CVE-2022-40897](https://avd.aquasec.com/nvd/cve-2022-40897)|\n\nPython Packaging Authority (PyPA) setuptools before 65.5.1 allows remote attackers to cause a denial of service via HTML in a crafted package or custom PackageIndex page. There is a Regular Expression Denial of Service (ReDoS) in package_index.py."
-              },
-              "properties": {
-                "precision": "very-high",
-                "security-severity": "7.5",
-                "tags": [
-                  "vulnerability",
-                  "security",
-                  "HIGH"
-                ]
-              }
-            }
-          ],
-          "version": "0.34.0"
+          "rules": [],
+          "version": "0.37.1"
         }
       },
-      "results": [
-        {
-          "ruleId": "CVE-2022-40897",
-          "ruleIndex": 0,
-          "level": "error",
-          "message": {
-            "text": "Package: setuptools\nInstalled Version: 39.2.0\nVulnerability CVE-2022-40897\nSeverity: HIGH\nFixed Version: 65.5.1\nLink: [CVE-2022-40897](https://avd.aquasec.com/nvd/cve-2022-40897)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "usr/lib/python3.6/site-packages/setuptools-39.2.0.dist-info/METADATA",
-                  "uriBaseId": "ROOTPATH"
-                },
-                "region": {
-                  "startLine": 1,
-                  "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 1
-                }
-              },
-              "message": {
-                "text": "usr/lib/python3.6/site-packages/setuptools-39.2.0.dist-info/METADATA: setuptools@39.2.0"
-              }
-            }
-          ]
-        }
-      ],
+      "results": [],
       "columnKind": "utf16CodeUnits",
       "originalUriBaseIds": {
         "ROOTPATH": {
