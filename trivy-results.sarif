@@ -8,11 +8,688 @@
           "fullName": "Trivy Vulnerability Scanner",
           "informationUri": "https://github.com/aquasecurity/trivy",
           "name": "Trivy",
-          "rules": [],
+          "rules": [
+            {
+              "id": "CVE-2022-42010",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "dbus: dbus-daemon crashes when receiving message with incorrectly nested parentheses and curly brackets"
+              },
+              "fullDescription": {
+                "text": "An issue was discovered in D-Bus before 1.12.24, 1.13.x and 1.14.x before 1.14.4, and 1.15.x before 1.15.2. An authenticated attacker can cause dbus-daemon and other programs that use libdbus to crash when receiving a message with certain invalid type signatures."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-42010",
+              "help": {
+                "text": "Vulnerability CVE-2022-42010\nSeverity: MEDIUM\nPackage: dbus-tools\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42010](https://avd.aquasec.com/nvd/cve-2022-42010)\nAn issue was discovered in D-Bus before 1.12.24, 1.13.x and 1.14.x before 1.14.4, and 1.15.x before 1.15.2. An authenticated attacker can cause dbus-daemon and other programs that use libdbus to crash when receiving a message with certain invalid type signatures.",
+                "markdown": "**Vulnerability CVE-2022-42010**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|dbus-tools|1:1.12.8-23.el8_7.1|[CVE-2022-42010](https://avd.aquasec.com/nvd/cve-2022-42010)|\n\nAn issue was discovered in D-Bus before 1.12.24, 1.13.x and 1.14.x before 1.14.4, and 1.15.x before 1.15.2. An authenticated attacker can cause dbus-daemon and other programs that use libdbus to crash when receiving a message with certain invalid type signatures."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-42011",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "dbus: dbus-daemon can be crashed by messages with array length inconsistent with element type"
+              },
+              "fullDescription": {
+                "text": "An issue was discovered in D-Bus before 1.12.24, 1.13.x and 1.14.x before 1.14.4, and 1.15.x before 1.15.2. An authenticated attacker can cause dbus-daemon and other programs that use libdbus to crash when receiving a message where an array length is inconsistent with the size of the element type."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-42011",
+              "help": {
+                "text": "Vulnerability CVE-2022-42011\nSeverity: MEDIUM\nPackage: dbus-tools\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42011](https://avd.aquasec.com/nvd/cve-2022-42011)\nAn issue was discovered in D-Bus before 1.12.24, 1.13.x and 1.14.x before 1.14.4, and 1.15.x before 1.15.2. An authenticated attacker can cause dbus-daemon and other programs that use libdbus to crash when receiving a message where an array length is inconsistent with the size of the element type.",
+                "markdown": "**Vulnerability CVE-2022-42011**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|dbus-tools|1:1.12.8-23.el8_7.1|[CVE-2022-42011](https://avd.aquasec.com/nvd/cve-2022-42011)|\n\nAn issue was discovered in D-Bus before 1.12.24, 1.13.x and 1.14.x before 1.14.4, and 1.15.x before 1.15.2. An authenticated attacker can cause dbus-daemon and other programs that use libdbus to crash when receiving a message where an array length is inconsistent with the size of the element type."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-42012",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "dbus: `_dbus_marshal_byteswap` doesn\u0026#39;t process fds in messages with \u0026#34;foreign\u0026#34; endianness correctly"
+              },
+              "fullDescription": {
+                "text": "An issue was discovered in D-Bus before 1.12.24, 1.13.x and 1.14.x before 1.14.4, and 1.15.x before 1.15.2. An authenticated attacker can cause dbus-daemon and other programs that use libdbus to crash by sending a message with attached file descriptors in an unexpected format."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-42012",
+              "help": {
+                "text": "Vulnerability CVE-2022-42012\nSeverity: MEDIUM\nPackage: dbus-tools\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42012](https://avd.aquasec.com/nvd/cve-2022-42012)\nAn issue was discovered in D-Bus before 1.12.24, 1.13.x and 1.14.x before 1.14.4, and 1.15.x before 1.15.2. An authenticated attacker can cause dbus-daemon and other programs that use libdbus to crash by sending a message with attached file descriptors in an unexpected format.",
+                "markdown": "**Vulnerability CVE-2022-42012**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|dbus-tools|1:1.12.8-23.el8_7.1|[CVE-2022-42012](https://avd.aquasec.com/nvd/cve-2022-42012)|\n\nAn issue was discovered in D-Bus before 1.12.24, 1.13.x and 1.14.x before 1.14.4, and 1.15.x before 1.15.2. An authenticated attacker can cause dbus-daemon and other programs that use libdbus to crash by sending a message with attached file descriptors in an unexpected format."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-43680",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "expat: use-after free caused by overeager destruction of a shared DTD in XML_ExternalEntityParserCreate"
+              },
+              "fullDescription": {
+                "text": "In libexpat through 2.4.9, there is a use-after free caused by overeager destruction of a shared DTD in XML_ExternalEntityParserCreate in out-of-memory situations."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-43680",
+              "help": {
+                "text": "Vulnerability CVE-2022-43680\nSeverity: MEDIUM\nPackage: expat\nFixed Version: 2.2.5-10.el8_7.1\nLink: [CVE-2022-43680](https://avd.aquasec.com/nvd/cve-2022-43680)\nIn libexpat through 2.4.9, there is a use-after free caused by overeager destruction of a shared DTD in XML_ExternalEntityParserCreate in out-of-memory situations.",
+                "markdown": "**Vulnerability CVE-2022-43680**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|expat|2.2.5-10.el8_7.1|[CVE-2022-43680](https://avd.aquasec.com/nvd/cve-2022-43680)|\n\nIn libexpat through 2.4.9, there is a use-after free caused by overeager destruction of a shared DTD in XML_ExternalEntityParserCreate in out-of-memory situations."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2021-46848",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "libtasn1: Out-of-bound access in ETYPE_OK"
+              },
+              "fullDescription": {
+                "text": "GNU Libtasn1 before 4.19.0 has an ETYPE_OK off-by-one array size check that affects asn1_encode_simple_der."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2021-46848",
+              "help": {
+                "text": "Vulnerability CVE-2021-46848\nSeverity: MEDIUM\nPackage: libtasn1\nFixed Version: 4.13-4.el8_7\nLink: [CVE-2021-46848](https://avd.aquasec.com/nvd/cve-2021-46848)\nGNU Libtasn1 before 4.19.0 has an ETYPE_OK off-by-one array size check that affects asn1_encode_simple_der.",
+                "markdown": "**Vulnerability CVE-2021-46848**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libtasn1|4.13-4.el8_7|[CVE-2021-46848](https://avd.aquasec.com/nvd/cve-2021-46848)|\n\nGNU Libtasn1 before 4.19.0 has an ETYPE_OK off-by-one array size check that affects asn1_encode_simple_der."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-40303",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "libxml2: integer overflows with XML_PARSE_HUGE"
+              },
+              "fullDescription": {
+                "text": "An issue was discovered in libxml2 before 2.10.3. When parsing a multi-gigabyte XML document with the XML_PARSE_HUGE parser option enabled, several integer counters can overflow. This results in an attempt to access an array at a negative 2GB offset, typically leading to a segmentation fault."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-40303",
+              "help": {
+                "text": "Vulnerability CVE-2022-40303\nSeverity: MEDIUM\nPackage: libxml2\nFixed Version: 2.9.7-15.el8_7.1\nLink: [CVE-2022-40303](https://avd.aquasec.com/nvd/cve-2022-40303)\nAn issue was discovered in libxml2 before 2.10.3. When parsing a multi-gigabyte XML document with the XML_PARSE_HUGE parser option enabled, several integer counters can overflow. This results in an attempt to access an array at a negative 2GB offset, typically leading to a segmentation fault.",
+                "markdown": "**Vulnerability CVE-2022-40303**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libxml2|2.9.7-15.el8_7.1|[CVE-2022-40303](https://avd.aquasec.com/nvd/cve-2022-40303)|\n\nAn issue was discovered in libxml2 before 2.10.3. When parsing a multi-gigabyte XML document with the XML_PARSE_HUGE parser option enabled, several integer counters can overflow. This results in an attempt to access an array at a negative 2GB offset, typically leading to a segmentation fault."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-40304",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "libxml2: dict corruption caused by entity reference cycles"
+              },
+              "fullDescription": {
+                "text": "An issue was discovered in libxml2 before 2.10.3. Certain invalid XML entity definitions can corrupt a hash table key, potentially leading to subsequent logic errors. In one case, a double-free can be provoked."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-40304",
+              "help": {
+                "text": "Vulnerability CVE-2022-40304\nSeverity: MEDIUM\nPackage: libxml2\nFixed Version: 2.9.7-15.el8_7.1\nLink: [CVE-2022-40304](https://avd.aquasec.com/nvd/cve-2022-40304)\nAn issue was discovered in libxml2 before 2.10.3. Certain invalid XML entity definitions can corrupt a hash table key, potentially leading to subsequent logic errors. In one case, a double-free can be provoked.",
+                "markdown": "**Vulnerability CVE-2022-40304**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libxml2|2.9.7-15.el8_7.1|[CVE-2022-40304](https://avd.aquasec.com/nvd/cve-2022-40304)|\n\nAn issue was discovered in libxml2 before 2.10.3. Certain invalid XML entity definitions can corrupt a hash table key, potentially leading to subsequent logic errors. In one case, a double-free can be provoked."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-35737",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "sqlite: an array-bounds overflow if billions of bytes are used in a string argument to a C API"
+              },
+              "fullDescription": {
+                "text": "SQLite 1.0.12 through 3.39.x before 3.39.2 sometimes allows an array-bounds overflow if billions of bytes are used in a string argument to a C API."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-35737",
+              "help": {
+                "text": "Vulnerability CVE-2022-35737\nSeverity: MEDIUM\nPackage: sqlite-libs\nFixed Version: 3.26.0-17.el8_7\nLink: [CVE-2022-35737](https://avd.aquasec.com/nvd/cve-2022-35737)\nSQLite 1.0.12 through 3.39.x before 3.39.2 sometimes allows an array-bounds overflow if billions of bytes are used in a string argument to a C API.",
+                "markdown": "**Vulnerability CVE-2022-35737**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|sqlite-libs|3.26.0-17.el8_7|[CVE-2022-35737](https://avd.aquasec.com/nvd/cve-2022-35737)|\n\nSQLite 1.0.12 through 3.39.x before 3.39.2 sometimes allows an array-bounds overflow if billions of bytes are used in a string argument to a C API."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            }
+          ],
           "version": "0.37.1"
         }
       },
-      "results": [],
+      "results": [
+        {
+          "ruleId": "CVE-2022-42010",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: dbus\nInstalled Version: 1:1.12.8-23.el8\nVulnerability CVE-2022-42010\nSeverity: MEDIUM\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42010](https://avd.aquasec.com/nvd/cve-2022-42010)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: dbus@1:1.12.8-23.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-42011",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: dbus\nInstalled Version: 1:1.12.8-23.el8\nVulnerability CVE-2022-42011\nSeverity: MEDIUM\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42011](https://avd.aquasec.com/nvd/cve-2022-42011)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: dbus@1:1.12.8-23.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-42012",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: dbus\nInstalled Version: 1:1.12.8-23.el8\nVulnerability CVE-2022-42012\nSeverity: MEDIUM\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42012](https://avd.aquasec.com/nvd/cve-2022-42012)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: dbus@1:1.12.8-23.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-42010",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: dbus-daemon\nInstalled Version: 1:1.12.8-23.el8\nVulnerability CVE-2022-42010\nSeverity: MEDIUM\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42010](https://avd.aquasec.com/nvd/cve-2022-42010)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: dbus-daemon@1:1.12.8-23.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-42011",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: dbus-daemon\nInstalled Version: 1:1.12.8-23.el8\nVulnerability CVE-2022-42011\nSeverity: MEDIUM\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42011](https://avd.aquasec.com/nvd/cve-2022-42011)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: dbus-daemon@1:1.12.8-23.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-42012",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: dbus-daemon\nInstalled Version: 1:1.12.8-23.el8\nVulnerability CVE-2022-42012\nSeverity: MEDIUM\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42012](https://avd.aquasec.com/nvd/cve-2022-42012)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: dbus-daemon@1:1.12.8-23.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-42010",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: dbus-libs\nInstalled Version: 1:1.12.8-23.el8\nVulnerability CVE-2022-42010\nSeverity: MEDIUM\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42010](https://avd.aquasec.com/nvd/cve-2022-42010)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: dbus-libs@1:1.12.8-23.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-42011",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: dbus-libs\nInstalled Version: 1:1.12.8-23.el8\nVulnerability CVE-2022-42011\nSeverity: MEDIUM\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42011](https://avd.aquasec.com/nvd/cve-2022-42011)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: dbus-libs@1:1.12.8-23.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-42012",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: dbus-libs\nInstalled Version: 1:1.12.8-23.el8\nVulnerability CVE-2022-42012\nSeverity: MEDIUM\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42012](https://avd.aquasec.com/nvd/cve-2022-42012)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: dbus-libs@1:1.12.8-23.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-42010",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: dbus-tools\nInstalled Version: 1:1.12.8-23.el8\nVulnerability CVE-2022-42010\nSeverity: MEDIUM\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42010](https://avd.aquasec.com/nvd/cve-2022-42010)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: dbus-tools@1:1.12.8-23.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-42011",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: dbus-tools\nInstalled Version: 1:1.12.8-23.el8\nVulnerability CVE-2022-42011\nSeverity: MEDIUM\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42011](https://avd.aquasec.com/nvd/cve-2022-42011)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: dbus-tools@1:1.12.8-23.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-42012",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: dbus-tools\nInstalled Version: 1:1.12.8-23.el8\nVulnerability CVE-2022-42012\nSeverity: MEDIUM\nFixed Version: 1:1.12.8-23.el8_7.1\nLink: [CVE-2022-42012](https://avd.aquasec.com/nvd/cve-2022-42012)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: dbus-tools@1:1.12.8-23.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-43680",
+          "ruleIndex": 3,
+          "level": "warning",
+          "message": {
+            "text": "Package: expat\nInstalled Version: 2.2.5-10.el8\nVulnerability CVE-2022-43680\nSeverity: MEDIUM\nFixed Version: 2.2.5-10.el8_7.1\nLink: [CVE-2022-43680](https://avd.aquasec.com/nvd/cve-2022-43680)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: expat@2.2.5-10.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2021-46848",
+          "ruleIndex": 4,
+          "level": "warning",
+          "message": {
+            "text": "Package: libtasn1\nInstalled Version: 4.13-3.el8\nVulnerability CVE-2021-46848\nSeverity: MEDIUM\nFixed Version: 4.13-4.el8_7\nLink: [CVE-2021-46848](https://avd.aquasec.com/nvd/cve-2021-46848)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: libtasn1@4.13-3.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-40303",
+          "ruleIndex": 5,
+          "level": "warning",
+          "message": {
+            "text": "Package: libxml2\nInstalled Version: 2.9.7-15.el8\nVulnerability CVE-2022-40303\nSeverity: MEDIUM\nFixed Version: 2.9.7-15.el8_7.1\nLink: [CVE-2022-40303](https://avd.aquasec.com/nvd/cve-2022-40303)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: libxml2@2.9.7-15.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-40304",
+          "ruleIndex": 6,
+          "level": "warning",
+          "message": {
+            "text": "Package: libxml2\nInstalled Version: 2.9.7-15.el8\nVulnerability CVE-2022-40304\nSeverity: MEDIUM\nFixed Version: 2.9.7-15.el8_7.1\nLink: [CVE-2022-40304](https://avd.aquasec.com/nvd/cve-2022-40304)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: libxml2@2.9.7-15.el8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-35737",
+          "ruleIndex": 7,
+          "level": "warning",
+          "message": {
+            "text": "Package: sqlite-libs\nInstalled Version: 3.26.0-16.el8_6\nVulnerability CVE-2022-35737\nSeverity: MEDIUM\nFixed Version: 3.26.0-17.el8_7\nLink: [CVE-2022-35737](https://avd.aquasec.com/nvd/cve-2022-35737)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: sqlite-libs@3.26.0-16.el8_6"
+              }
+            }
+          ]
+        }
+      ],
       "columnKind": "utf16CodeUnits",
       "originalUriBaseIds": {
         "ROOTPATH": {
