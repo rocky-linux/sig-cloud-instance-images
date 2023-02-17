@@ -118,6 +118,33 @@
               }
             },
             {
+              "id": "CVE-2022-47629",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "libksba: integer overflow to code execution"
+              },
+              "fullDescription": {
+                "text": "Libksba before 1.6.3 is prone to an integer overflow vulnerability in the CRL signature parser."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-47629",
+              "help": {
+                "text": "Vulnerability CVE-2022-47629\nSeverity: HIGH\nPackage: libksba\nFixed Version: 1.3.5-9.el8_7\nLink: [CVE-2022-47629](https://avd.aquasec.com/nvd/cve-2022-47629)\nLibksba before 1.6.3 is prone to an integer overflow vulnerability in the CRL signature parser.",
+                "markdown": "**Vulnerability CVE-2022-47629**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|libksba|1.3.5-9.el8_7|[CVE-2022-47629](https://avd.aquasec.com/nvd/cve-2022-47629)|\n\nLibksba before 1.6.3 is prone to an integer overflow vulnerability in the CRL signature parser."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
               "id": "CVE-2021-46848",
               "name": "OsPackageVulnerability",
               "shortDescription": {
@@ -582,8 +609,35 @@
           ]
         },
         {
-          "ruleId": "CVE-2021-46848",
+          "ruleId": "CVE-2022-47629",
           "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Package: libksba\nInstalled Version: 1.3.5-8.el8_6\nVulnerability CVE-2022-47629\nSeverity: HIGH\nFixed Version: 1.3.5-9.el8_7\nLink: [CVE-2022-47629](https://avd.aquasec.com/nvd/cve-2022-47629)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: libksba@1.3.5-8.el8_6"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2021-46848",
+          "ruleIndex": 5,
           "level": "warning",
           "message": {
             "text": "Package: libtasn1\nInstalled Version: 4.13-3.el8\nVulnerability CVE-2021-46848\nSeverity: MEDIUM\nFixed Version: 4.13-4.el8_7\nLink: [CVE-2021-46848](https://avd.aquasec.com/nvd/cve-2021-46848)"
@@ -610,7 +664,7 @@
         },
         {
           "ruleId": "CVE-2022-40303",
-          "ruleIndex": 5,
+          "ruleIndex": 6,
           "level": "warning",
           "message": {
             "text": "Package: libxml2\nInstalled Version: 2.9.7-15.el8\nVulnerability CVE-2022-40303\nSeverity: MEDIUM\nFixed Version: 2.9.7-15.el8_7.1\nLink: [CVE-2022-40303](https://avd.aquasec.com/nvd/cve-2022-40303)"
@@ -637,7 +691,7 @@
         },
         {
           "ruleId": "CVE-2022-40304",
-          "ruleIndex": 6,
+          "ruleIndex": 7,
           "level": "warning",
           "message": {
             "text": "Package: libxml2\nInstalled Version: 2.9.7-15.el8\nVulnerability CVE-2022-40304\nSeverity: MEDIUM\nFixed Version: 2.9.7-15.el8_7.1\nLink: [CVE-2022-40304](https://avd.aquasec.com/nvd/cve-2022-40304)"
@@ -664,7 +718,7 @@
         },
         {
           "ruleId": "CVE-2022-35737",
-          "ruleIndex": 7,
+          "ruleIndex": 8,
           "level": "warning",
           "message": {
             "text": "Package: sqlite-libs\nInstalled Version: 3.26.0-16.el8_6\nVulnerability CVE-2022-35737\nSeverity: MEDIUM\nFixed Version: 3.26.0-17.el8_7\nLink: [CVE-2022-35737](https://avd.aquasec.com/nvd/cve-2022-35737)"
