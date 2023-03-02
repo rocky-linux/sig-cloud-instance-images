@@ -1,0 +1,431 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "fullName": "Trivy Vulnerability Scanner",
+          "informationUri": "https://github.com/aquasecurity/trivy",
+          "name": "Trivy",
+          "rules": [
+            {
+              "id": "CVE-2020-10735",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "python: int() type in PyLong_FromString() does not limit amount of digits converting text to int leading to DoS"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in python. In algorithms with quadratic time complexity using non-binary bases, when using int(\u0026#34;text\u0026#34;), a system could take 50ms to parse an int string with 100,000 digits and 5s for 1,000,000 digits (float, decimal, int.from_bytes(), and int() for binary bases 2, 4, 8, 16, and 32 are not affected). The highest threat from this vulnerability is to system availability."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-10735",
+              "help": {
+                "text": "Vulnerability CVE-2020-10735\nSeverity: MEDIUM\nPackage: python3-libs\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2020-10735](https://avd.aquasec.com/nvd/cve-2020-10735)\nA flaw was found in python. In algorithms with quadratic time complexity using non-binary bases, when using int(\"text\"), a system could take 50ms to parse an int string with 100,000 digits and 5s for 1,000,000 digits (float, decimal, int.from_bytes(), and int() for binary bases 2, 4, 8, 16, and 32 are not affected). The highest threat from this vulnerability is to system availability.",
+                "markdown": "**Vulnerability CVE-2020-10735**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|python3-libs|3.6.8-48.el8_7.1.rocky.0|[CVE-2020-10735](https://avd.aquasec.com/nvd/cve-2020-10735)|\n\nA flaw was found in python. In algorithms with quadratic time complexity using non-binary bases, when using int(\"text\"), a system could take 50ms to parse an int string with 100,000 digits and 5s for 1,000,000 digits (float, decimal, int.from_bytes(), and int() for binary bases 2, 4, 8, 16, and 32 are not affected). The highest threat from this vulnerability is to system availability."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2021-28861",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "python: open redirection vulnerability in lib/http/server.py may lead to information disclosure"
+              },
+              "fullDescription": {
+                "text": "** DISPUTED ** Python 3.x through 3.10 has an open redirection vulnerability in lib/http/server.py due to no protection against multiple (/) at the beginning of URI path which may leads to information disclosure. NOTE: this is disputed by a third party because the http.server.html documentation page states \u0026#34;Warning: http.server is not recommended for production. It only implements basic security checks.\u0026#34;"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2021-28861",
+              "help": {
+                "text": "Vulnerability CVE-2021-28861\nSeverity: MEDIUM\nPackage: python3-libs\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2021-28861](https://avd.aquasec.com/nvd/cve-2021-28861)\n** DISPUTED ** Python 3.x through 3.10 has an open redirection vulnerability in lib/http/server.py due to no protection against multiple (/) at the beginning of URI path which may leads to information disclosure. NOTE: this is disputed by a third party because the http.server.html documentation page states \"Warning: http.server is not recommended for production. It only implements basic security checks.\"",
+                "markdown": "**Vulnerability CVE-2021-28861**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|python3-libs|3.6.8-48.el8_7.1.rocky.0|[CVE-2021-28861](https://avd.aquasec.com/nvd/cve-2021-28861)|\n\n** DISPUTED ** Python 3.x through 3.10 has an open redirection vulnerability in lib/http/server.py due to no protection against multiple (/) at the beginning of URI path which may leads to information disclosure. NOTE: this is disputed by a third party because the http.server.html documentation page states \"Warning: http.server is not recommended for production. It only implements basic security checks.\""
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-45061",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "Python: CPU denial of service via inefficient IDNA decoder"
+              },
+              "fullDescription": {
+                "text": "An issue was discovered in Python before 3.11.1. An unnecessary quadratic algorithm exists in one path when processing some inputs to the IDNA (RFC 3490) decoder, such that a crafted, unreasonably long name being presented to the decoder could lead to a CPU denial of service. Hostnames are often supplied by remote servers that could be controlled by a malicious actor; in such a scenario, they could trigger excessive CPU consumption on the client attempting to make use of an attacker-supplied supposed hostname. For example, the attack payload could be placed in the Location header of an HTTP response with status code 302. A fix is planned in 3.11.1, 3.10.9, 3.9.16, 3.8.16, and 3.7.16."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-45061",
+              "help": {
+                "text": "Vulnerability CVE-2022-45061\nSeverity: MEDIUM\nPackage: python3-libs\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2022-45061](https://avd.aquasec.com/nvd/cve-2022-45061)\nAn issue was discovered in Python before 3.11.1. An unnecessary quadratic algorithm exists in one path when processing some inputs to the IDNA (RFC 3490) decoder, such that a crafted, unreasonably long name being presented to the decoder could lead to a CPU denial of service. Hostnames are often supplied by remote servers that could be controlled by a malicious actor; in such a scenario, they could trigger excessive CPU consumption on the client attempting to make use of an attacker-supplied supposed hostname. For example, the attack payload could be placed in the Location header of an HTTP response with status code 302. A fix is planned in 3.11.1, 3.10.9, 3.9.16, 3.8.16, and 3.7.16.",
+                "markdown": "**Vulnerability CVE-2022-45061**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|python3-libs|3.6.8-48.el8_7.1.rocky.0|[CVE-2022-45061](https://avd.aquasec.com/nvd/cve-2022-45061)|\n\nAn issue was discovered in Python before 3.11.1. An unnecessary quadratic algorithm exists in one path when processing some inputs to the IDNA (RFC 3490) decoder, such that a crafted, unreasonably long name being presented to the decoder could lead to a CPU denial of service. Hostnames are often supplied by remote servers that could be controlled by a malicious actor; in such a scenario, they could trigger excessive CPU consumption on the client attempting to make use of an attacker-supplied supposed hostname. For example, the attack payload could be placed in the Location header of an HTTP response with status code 302. A fix is planned in 3.11.1, 3.10.9, 3.9.16, 3.8.16, and 3.7.16."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-4415",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "systemd: local information leak due to systemd-coredump not respecting fs.suid_dumpable kernel setting"
+              },
+              "fullDescription": {
+                "text": "A vulnerability was found in systemd. This security flaw can cause a local information leak due to systemd-coredump not respecting the fs.suid_dumpable kernel setting."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-4415",
+              "help": {
+                "text": "Vulnerability CVE-2022-4415\nSeverity: MEDIUM\nPackage: systemd-pam\nFixed Version: 239-68.el8_7.4\nLink: [CVE-2022-4415](https://avd.aquasec.com/nvd/cve-2022-4415)\nA vulnerability was found in systemd. This security flaw can cause a local information leak due to systemd-coredump not respecting the fs.suid_dumpable kernel setting.",
+                "markdown": "**Vulnerability CVE-2022-4415**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|systemd-pam|239-68.el8_7.4|[CVE-2022-4415](https://avd.aquasec.com/nvd/cve-2022-4415)|\n\nA vulnerability was found in systemd. This security flaw can cause a local information leak due to systemd-coredump not respecting the fs.suid_dumpable kernel setting."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-48303",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "tar: heap buffer overflow at from_header() in list.c via specially crafted checksum"
+              },
+              "fullDescription": {
+                "text": "GNU Tar through 1.34 has a one-byte out-of-bounds read that results in use of uninitialized memory for a conditional jump. Exploitation to change the flow of control has not been demonstrated. The issue occurs in from_header in list.c via a V7 archive in which mtime has approximately 11 whitespace characters."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-48303",
+              "help": {
+                "text": "Vulnerability CVE-2022-48303\nSeverity: MEDIUM\nPackage: tar\nFixed Version: 2:1.30-6.el8_7.1\nLink: [CVE-2022-48303](https://avd.aquasec.com/nvd/cve-2022-48303)\nGNU Tar through 1.34 has a one-byte out-of-bounds read that results in use of uninitialized memory for a conditional jump. Exploitation to change the flow of control has not been demonstrated. The issue occurs in from_header in list.c via a V7 archive in which mtime has approximately 11 whitespace characters.",
+                "markdown": "**Vulnerability CVE-2022-48303**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|tar|2:1.30-6.el8_7.1|[CVE-2022-48303](https://avd.aquasec.com/nvd/cve-2022-48303)|\n\nGNU Tar through 1.34 has a one-byte out-of-bounds read that results in use of uninitialized memory for a conditional jump. Exploitation to change the flow of control has not been demonstrated. The issue occurs in from_header in list.c via a V7 archive in which mtime has approximately 11 whitespace characters."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            }
+          ],
+          "version": "0.37.2"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2020-10735",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: platform-python\nInstalled Version: 3.6.8-48.el8_7.rocky.0\nVulnerability CVE-2020-10735\nSeverity: MEDIUM\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2020-10735](https://avd.aquasec.com/nvd/cve-2020-10735)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: platform-python@3.6.8-48.el8_7.rocky.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2021-28861",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: platform-python\nInstalled Version: 3.6.8-48.el8_7.rocky.0\nVulnerability CVE-2021-28861\nSeverity: MEDIUM\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2021-28861](https://avd.aquasec.com/nvd/cve-2021-28861)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: platform-python@3.6.8-48.el8_7.rocky.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-45061",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: platform-python\nInstalled Version: 3.6.8-48.el8_7.rocky.0\nVulnerability CVE-2022-45061\nSeverity: MEDIUM\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2022-45061](https://avd.aquasec.com/nvd/cve-2022-45061)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: platform-python@3.6.8-48.el8_7.rocky.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2020-10735",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: python3-libs\nInstalled Version: 3.6.8-48.el8_7.rocky.0\nVulnerability CVE-2020-10735\nSeverity: MEDIUM\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2020-10735](https://avd.aquasec.com/nvd/cve-2020-10735)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: python3-libs@3.6.8-48.el8_7.rocky.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2021-28861",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: python3-libs\nInstalled Version: 3.6.8-48.el8_7.rocky.0\nVulnerability CVE-2021-28861\nSeverity: MEDIUM\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2021-28861](https://avd.aquasec.com/nvd/cve-2021-28861)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: python3-libs@3.6.8-48.el8_7.rocky.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-45061",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: python3-libs\nInstalled Version: 3.6.8-48.el8_7.rocky.0\nVulnerability CVE-2022-45061\nSeverity: MEDIUM\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2022-45061](https://avd.aquasec.com/nvd/cve-2022-45061)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: python3-libs@3.6.8-48.el8_7.rocky.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-4415",
+          "ruleIndex": 3,
+          "level": "warning",
+          "message": {
+            "text": "Package: systemd\nInstalled Version: 239-68.el8_7.2\nVulnerability CVE-2022-4415\nSeverity: MEDIUM\nFixed Version: 239-68.el8_7.4\nLink: [CVE-2022-4415](https://avd.aquasec.com/nvd/cve-2022-4415)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: systemd@239-68.el8_7.2"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-4415",
+          "ruleIndex": 3,
+          "level": "warning",
+          "message": {
+            "text": "Package: systemd-libs\nInstalled Version: 239-68.el8_7.2\nVulnerability CVE-2022-4415\nSeverity: MEDIUM\nFixed Version: 239-68.el8_7.4\nLink: [CVE-2022-4415](https://avd.aquasec.com/nvd/cve-2022-4415)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: systemd-libs@239-68.el8_7.2"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-4415",
+          "ruleIndex": 3,
+          "level": "warning",
+          "message": {
+            "text": "Package: systemd-pam\nInstalled Version: 239-68.el8_7.2\nVulnerability CVE-2022-4415\nSeverity: MEDIUM\nFixed Version: 239-68.el8_7.4\nLink: [CVE-2022-4415](https://avd.aquasec.com/nvd/cve-2022-4415)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: systemd-pam@239-68.el8_7.2"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-48303",
+          "ruleIndex": 4,
+          "level": "warning",
+          "message": {
+            "text": "Package: tar\nInstalled Version: 2:1.30-6.el8\nVulnerability CVE-2022-48303\nSeverity: MEDIUM\nFixed Version: 2:1.30-6.el8_7.1\nLink: [CVE-2022-48303](https://avd.aquasec.com/nvd/cve-2022-48303)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: tar@2:1.30-6.el8"
+              }
+            }
+          ]
+        }
+      ],
+      "columnKind": "utf16CodeUnits",
+      "originalUriBaseIds": {
+        "ROOTPATH": {
+          "uri": "file:///"
+        }
+      }
+    }
+  ]
+}
