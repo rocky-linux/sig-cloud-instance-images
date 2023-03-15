@@ -10,6 +10,33 @@
           "name": "Trivy",
           "rules": [
             {
+              "id": "CVE-2023-23916",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "curl: HTTP multi-header compression denial of service"
+              },
+              "fullDescription": {
+                "text": "An allocation of resources without limits or throttling vulnerability exists in curl \u0026lt;v7.88.0 based on the \u0026#34;chained\u0026#34; HTTP compression algorithms, meaning that a server response can be compressed multiple times and potentially with differentalgorithms. The number of acceptable \u0026#34;links\u0026#34; in this \u0026#34;decompression chain\u0026#34; wascapped, but the cap was implemented on a per-header basis allowing a maliciousserver to insert a virtually unlimited number of compression steps simply byusing many headers. The use of such a decompression chain could result in a \u0026#34;malloc bomb\u0026#34;, making curl end up spending enormous amounts of allocated heap memory, or trying to and returning out of memory errors."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2023-23916",
+              "help": {
+                "text": "Vulnerability CVE-2023-23916\nSeverity: MEDIUM\nPackage: libcurl-minimal\nFixed Version: 7.61.1-25.el8_7.3\nLink: [CVE-2023-23916](https://avd.aquasec.com/nvd/cve-2023-23916)\nAn allocation of resources without limits or throttling vulnerability exists in curl \u003cv7.88.0 based on the \"chained\" HTTP compression algorithms, meaning that a server response can be compressed multiple times and potentially with differentalgorithms. The number of acceptable \"links\" in this \"decompression chain\" wascapped, but the cap was implemented on a per-header basis allowing a maliciousserver to insert a virtually unlimited number of compression steps simply byusing many headers. The use of such a decompression chain could result in a \"malloc bomb\", making curl end up spending enormous amounts of allocated heap memory, or trying to and returning out of memory errors.",
+                "markdown": "**Vulnerability CVE-2023-23916**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libcurl-minimal|7.61.1-25.el8_7.3|[CVE-2023-23916](https://avd.aquasec.com/nvd/cve-2023-23916)|\n\nAn allocation of resources without limits or throttling vulnerability exists in curl \u003cv7.88.0 based on the \"chained\" HTTP compression algorithms, meaning that a server response can be compressed multiple times and potentially with differentalgorithms. The number of acceptable \"links\" in this \"decompression chain\" wascapped, but the cap was implemented on a per-header basis allowing a maliciousserver to insert a virtually unlimited number of compression steps simply byusing many headers. The use of such a decompression chain could result in a \"malloc bomb\", making curl end up spending enormous amounts of allocated heap memory, or trying to and returning out of memory errors."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
               "id": "CVE-2020-10735",
               "name": "OsPackageVulnerability",
               "shortDescription": {
@@ -91,6 +118,33 @@
               }
             },
             {
+              "id": "CVE-2022-40897",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "pypa-setuptools: Regular Expression Denial of Service (ReDoS) in package_index.py"
+              },
+              "fullDescription": {
+                "text": "Python Packaging Authority (PyPA) setuptools before 65.5.1 allows remote attackers to cause a denial of service via HTML in a crafted package or custom PackageIndex page. There is a Regular Expression Denial of Service (ReDoS) in package_index.py."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-40897",
+              "help": {
+                "text": "Vulnerability CVE-2022-40897\nSeverity: MEDIUM\nPackage: python3-setuptools-wheel\nFixed Version: 39.2.0-6.el8_7.1\nLink: [CVE-2022-40897](https://avd.aquasec.com/nvd/cve-2022-40897)\nPython Packaging Authority (PyPA) setuptools before 65.5.1 allows remote attackers to cause a denial of service via HTML in a crafted package or custom PackageIndex page. There is a Regular Expression Denial of Service (ReDoS) in package_index.py.",
+                "markdown": "**Vulnerability CVE-2022-40897**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|python3-setuptools-wheel|39.2.0-6.el8_7.1|[CVE-2022-40897](https://avd.aquasec.com/nvd/cve-2022-40897)|\n\nPython Packaging Authority (PyPA) setuptools before 65.5.1 allows remote attackers to cause a denial of service via HTML in a crafted package or custom PackageIndex page. There is a Regular Expression Denial of Service (ReDoS) in package_index.py."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
               "id": "CVE-2022-4415",
               "name": "OsPackageVulnerability",
               "shortDescription": {
@@ -150,8 +204,62 @@
       },
       "results": [
         {
-          "ruleId": "CVE-2020-10735",
+          "ruleId": "CVE-2023-23916",
           "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: curl\nInstalled Version: 7.61.1-25.el8_7.1\nVulnerability CVE-2023-23916\nSeverity: MEDIUM\nFixed Version: 7.61.1-25.el8_7.3\nLink: [CVE-2023-23916](https://avd.aquasec.com/nvd/cve-2023-23916)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: curl@7.61.1-25.el8_7.1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2023-23916",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: libcurl-minimal\nInstalled Version: 7.61.1-25.el8_7.1\nVulnerability CVE-2023-23916\nSeverity: MEDIUM\nFixed Version: 7.61.1-25.el8_7.3\nLink: [CVE-2023-23916](https://avd.aquasec.com/nvd/cve-2023-23916)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: libcurl-minimal@7.61.1-25.el8_7.1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2020-10735",
+          "ruleIndex": 1,
           "level": "warning",
           "message": {
             "text": "Package: platform-python\nInstalled Version: 3.6.8-48.el8_7.rocky.0\nVulnerability CVE-2020-10735\nSeverity: MEDIUM\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2020-10735](https://avd.aquasec.com/nvd/cve-2020-10735)"
@@ -178,7 +286,7 @@
         },
         {
           "ruleId": "CVE-2021-28861",
-          "ruleIndex": 1,
+          "ruleIndex": 2,
           "level": "warning",
           "message": {
             "text": "Package: platform-python\nInstalled Version: 3.6.8-48.el8_7.rocky.0\nVulnerability CVE-2021-28861\nSeverity: MEDIUM\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2021-28861](https://avd.aquasec.com/nvd/cve-2021-28861)"
@@ -205,7 +313,7 @@
         },
         {
           "ruleId": "CVE-2022-45061",
-          "ruleIndex": 2,
+          "ruleIndex": 3,
           "level": "warning",
           "message": {
             "text": "Package: platform-python\nInstalled Version: 3.6.8-48.el8_7.rocky.0\nVulnerability CVE-2022-45061\nSeverity: MEDIUM\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2022-45061](https://avd.aquasec.com/nvd/cve-2022-45061)"
@@ -231,8 +339,35 @@
           ]
         },
         {
+          "ruleId": "CVE-2022-40897",
+          "ruleIndex": 4,
+          "level": "warning",
+          "message": {
+            "text": "Package: platform-python-setuptools\nInstalled Version: 39.2.0-6.el8\nVulnerability CVE-2022-40897\nSeverity: MEDIUM\nFixed Version: 39.2.0-6.el8_7.1\nLink: [CVE-2022-40897](https://avd.aquasec.com/nvd/cve-2022-40897)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: platform-python-setuptools@39.2.0-6.el8"
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "CVE-2020-10735",
-          "ruleIndex": 0,
+          "ruleIndex": 1,
           "level": "warning",
           "message": {
             "text": "Package: python3-libs\nInstalled Version: 3.6.8-48.el8_7.rocky.0\nVulnerability CVE-2020-10735\nSeverity: MEDIUM\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2020-10735](https://avd.aquasec.com/nvd/cve-2020-10735)"
@@ -259,7 +394,7 @@
         },
         {
           "ruleId": "CVE-2021-28861",
-          "ruleIndex": 1,
+          "ruleIndex": 2,
           "level": "warning",
           "message": {
             "text": "Package: python3-libs\nInstalled Version: 3.6.8-48.el8_7.rocky.0\nVulnerability CVE-2021-28861\nSeverity: MEDIUM\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2021-28861](https://avd.aquasec.com/nvd/cve-2021-28861)"
@@ -286,7 +421,7 @@
         },
         {
           "ruleId": "CVE-2022-45061",
-          "ruleIndex": 2,
+          "ruleIndex": 3,
           "level": "warning",
           "message": {
             "text": "Package: python3-libs\nInstalled Version: 3.6.8-48.el8_7.rocky.0\nVulnerability CVE-2022-45061\nSeverity: MEDIUM\nFixed Version: 3.6.8-48.el8_7.1.rocky.0\nLink: [CVE-2022-45061](https://avd.aquasec.com/nvd/cve-2022-45061)"
@@ -312,8 +447,35 @@
           ]
         },
         {
+          "ruleId": "CVE-2022-40897",
+          "ruleIndex": 4,
+          "level": "warning",
+          "message": {
+            "text": "Package: python3-setuptools-wheel\nInstalled Version: 39.2.0-6.el8\nVulnerability CVE-2022-40897\nSeverity: MEDIUM\nFixed Version: 39.2.0-6.el8_7.1\nLink: [CVE-2022-40897](https://avd.aquasec.com/nvd/cve-2022-40897)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "rockylinux/rockylinux",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "rockylinux/rockylinux: python3-setuptools-wheel@39.2.0-6.el8"
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "CVE-2022-4415",
-          "ruleIndex": 3,
+          "ruleIndex": 5,
           "level": "warning",
           "message": {
             "text": "Package: systemd\nInstalled Version: 239-68.el8_7.2\nVulnerability CVE-2022-4415\nSeverity: MEDIUM\nFixed Version: 239-68.el8_7.4\nLink: [CVE-2022-4415](https://avd.aquasec.com/nvd/cve-2022-4415)"
@@ -340,7 +502,7 @@
         },
         {
           "ruleId": "CVE-2022-4415",
-          "ruleIndex": 3,
+          "ruleIndex": 5,
           "level": "warning",
           "message": {
             "text": "Package: systemd-libs\nInstalled Version: 239-68.el8_7.2\nVulnerability CVE-2022-4415\nSeverity: MEDIUM\nFixed Version: 239-68.el8_7.4\nLink: [CVE-2022-4415](https://avd.aquasec.com/nvd/cve-2022-4415)"
@@ -367,7 +529,7 @@
         },
         {
           "ruleId": "CVE-2022-4415",
-          "ruleIndex": 3,
+          "ruleIndex": 5,
           "level": "warning",
           "message": {
             "text": "Package: systemd-pam\nInstalled Version: 239-68.el8_7.2\nVulnerability CVE-2022-4415\nSeverity: MEDIUM\nFixed Version: 239-68.el8_7.4\nLink: [CVE-2022-4415](https://avd.aquasec.com/nvd/cve-2022-4415)"
@@ -394,7 +556,7 @@
         },
         {
           "ruleId": "CVE-2022-48303",
-          "ruleIndex": 4,
+          "ruleIndex": 6,
           "level": "warning",
           "message": {
             "text": "Package: tar\nInstalled Version: 2:1.30-6.el8\nVulnerability CVE-2022-48303\nSeverity: MEDIUM\nFixed Version: 2:1.30-6.el8_7.1\nLink: [CVE-2022-48303](https://avd.aquasec.com/nvd/cve-2022-48303)"
