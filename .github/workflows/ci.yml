@@ -1,0 +1,47 @@
+---
+name: CI build for 2nd layer images
+
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  IMAGE_REGISTRY: docker.io
+  IMAGE_ACCOUNT: rockylinux
+
+jobs:
+  run_image_builds:
+    strategy:
+      matrix:
+        version:
+          - major: 8
+            arch: 'amd64, arm64'
+          - major: 9
+            arch: 'amd64, arm64, ppc64le, s390x'
+        type:
+          - micro
+          - init
+    runs-on: ubuntu-latest
+    name: Test the image build
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install qemu dependency
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qemu-user-static
+
+      - name: Build image
+        uses: redhat-actions/buildah-build@v2
+        id: build-image
+        with:
+          archs: ${{ matrix.version.arch }}
+          build-args: |
+            ImageVersion=${{ matrix.version.major }}
+          containerfiles: |
+            ./Containerfile-${{ matrix.type }}
+          labels: |
+            name=rockylinux
+            version=${{ matrix.version.major }}-ubi-${{ matrix.type }}
+          tags: ${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_ACCOUNT }}/rockylinux:${{ matrix.version.major }}-ubi-${{ matrix.type }}
