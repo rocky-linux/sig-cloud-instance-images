@@ -1,0 +1,15 @@
+ARG ImageVersion
+
+FROM rockylinux/rockylinux:$ImageVersion-ubi as ubi-micro-build
+ARG ImageVersion
+RUN yum install --installroot /mnt/rootfs coreutils-single glibc-minimal-langpack --releasever $ImageVersion --setopt install_weak_deps=false --nodocs -y && yum --installroot /mnt/rootfs clean all
+RUN rm -rf /mnt/rootfs/var/cache/* /mnt/rootfs/var/log/dnf* /mnt/rootfs/var/log/yum.*
+
+FROM scratch
+LABEL summary="Rocky Linux UBI micro image" \
+      description="Very small image which doesn't install the package manager." \
+      maintainer="Magauer Lukas <lukas@magauer.eu>"
+
+COPY --from=ubi-micro-build /mnt/rootfs/ /
+COPY --from=ubi-micro-build /etc/yum.repos.d/* /etc/yum.repos.d/
+CMD /bin/sh
