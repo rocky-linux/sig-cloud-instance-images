@@ -56,6 +56,7 @@ jobs:
           labels: |
             name=rockylinux
             version=${{ matrix.version.major }}-ubi-${{ matrix.type }}
+          oci: true
           tags: ${{ matrix.registry.domain }}/${{ matrix.registry.account }}/rockylinux:${{ matrix.version.major }}-ubi-${{ matrix.type }}
 
       - name: Push image
@@ -63,3 +64,5 @@ jobs:
         with:
           image: ${{ steps.build-image.outputs.image }}
           tags: ${{ steps.build-image.outputs.tags }}
+          extra-args: |
+            --format=v2s2

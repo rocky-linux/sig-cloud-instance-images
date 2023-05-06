@@ -44,4 +44,5 @@ jobs:
           labels: |
             name=rockylinux
             version=${{ matrix.version.major }}-ubi-${{ matrix.type }}
+          oci: true
           tags: ${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_ACCOUNT }}/rockylinux:${{ matrix.version.major }}-ubi-${{ matrix.type }}
