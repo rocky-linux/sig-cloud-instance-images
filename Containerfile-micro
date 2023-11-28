@@ -7,8 +7,11 @@ RUN rm -rf /mnt/rootfs/var/cache/* /mnt/rootfs/var/log/dnf* /mnt/rootfs/var/log/
 
 FROM scratch
 LABEL summary="Rocky Linux UBI micro image" \
-      description="Very small image which doesn't install the package manager." \
-      maintainer="Magauer Lukas <lukas@magauer.eu>"
+      org.opencontainers.image.authors="Magauer Lukas <lukas@magauer.eu>" \
+      org.opencontainers.image.description="Very small image which doesn't install the package manager." \
+      org.opencontainers.image.licenses="BSD-3-Clause" \
+      org.opencontainers.image.url="https://github.com/rocky-linux/sig-cloud-instance-images" \
+      org.opencontainers.image.vendor="Rocky Enterprise Software Foundation"
 
 COPY --from=ubi-micro-build /mnt/rootfs/ /
 COPY --from=ubi-micro-build /etc/yum.repos.d/* /etc/yum.repos.d/

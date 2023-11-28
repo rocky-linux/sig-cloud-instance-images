@@ -43,6 +43,7 @@ jobs:
             ./Containerfile-${{ matrix.type }}
           labels: |
             name=rockylinux
-            version=${{ matrix.version.major }}-ubi-${{ matrix.type }}
+            org.opencontainers.image.title=rockylinux
+            org.opencontainers.image.version=${{ matrix.version.major }}-ubi-${{ matrix.type }}
           oci: true
           tags: ${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_ACCOUNT }}/rockylinux:${{ matrix.version.major }}-ubi-${{ matrix.type }}
