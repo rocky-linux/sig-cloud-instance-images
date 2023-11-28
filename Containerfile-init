@@ -2,9 +2,12 @@ ARG ImageVersion
 
 FROM rockylinux/rockylinux:$ImageVersion-ubi
 LABEL summary="Rocky Linux UBI init image" \
-      description="This image is designed to run an init system as PID 1 for running multi-services inside a container." \
       usage="Do not use directly. Use as a base image for daemons. Install chosen packages and 'systemctl enable' them." \
-      maintainer="Magauer Lukas <lukas@magauer.eu>"
+      org.opencontainers.image.authors="Magauer Lukas <lukas@magauer.eu>" \
+      org.opencontainers.image.description="This image is designed to run an init system as PID 1 for running multi-services inside a container." \
+      org.opencontainers.image.licenses="BSD-3-Clause" \
+      org.opencontainers.image.url="https://github.com/rocky-linux/sig-cloud-instance-images" \
+      org.opencontainers.image.vendor="Rocky Enterprise Software Foundation"
 
 CMD ["/sbin/init"]
 
