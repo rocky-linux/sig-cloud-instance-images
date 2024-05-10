@@ -1,0 +1,3 @@
+.M.......  g /proc
+.M.......  g /sys
+S.5....T.  c /etc/dnf/dnf.conf
