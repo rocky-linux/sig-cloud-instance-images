@@ -1,0 +1,118 @@
+alternatives|(none)|1.24|1.el9|aarch64|(none)|GPL-2.0-only
+audit-libs|(none)|3.1.2|2.el9|aarch64|(none)|LGPLv2+
+basesystem|(none)|11|13.el9.0.1|noarch|(none)|Public Domain
+bash|(none)|5.1.8|9.el9|aarch64|(none)|GPLv3+
+bzip2-libs|(none)|1.0.8|8.el9|aarch64|(none)|BSD
+ca-certificates|(none)|2023.2.60_v7.0.306|90.1.el9_2|noarch|(none)|Public Domain
+coreutils-single|(none)|8.32|35.el9|aarch64|(none)|GPLv3+
+cracklib-dicts|(none)|2.9.6|27.el9|aarch64|(none)|LGPLv2+
+cracklib|(none)|2.9.6|27.el9|aarch64|(none)|LGPLv2+
+crypto-policies|(none)|20240202|1.git283706d.el9|noarch|(none)|LGPL-2.1-or-later
+curl|(none)|7.76.1|29.el9_4|aarch64|(none)|MIT
+cyrus-sasl-lib|(none)|2.1.27|21.el9|aarch64|(none)|BSD with advertising
+dejavu-sans-fonts|(none)|2.37|18.el9|noarch|(none)|Bitstream Vera and Public Domain
+dnf-data|(none)|4.14.0|9.el9|noarch|(none)|GPLv2+
+file-libs|(none)|5.39|16.el9|aarch64|(none)|BSD
+filesystem|(none)|3.16|2.el9|aarch64|(none)|Public Domain
+fonts-filesystem|1|2.0.5|7.el9.1|noarch|(none)|MIT
+gawk|(none)|5.1.0|6.el9|aarch64|(none)|GPLv3+ and GPLv2+ and LGPLv2+ and BSD
+gdbm-libs|1|1.19|4.el9|aarch64|(none)|GPLv3+
+glib2|(none)|2.68.4|14.el9|aarch64|(none)|LGPLv2+
+glibc-common|(none)|2.34|100.el9|aarch64|(none)|LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL
+glibc-minimal-langpack|(none)|2.34|100.el9|aarch64|(none)|LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL
+glibc|(none)|2.34|100.el9|aarch64|(none)|LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL
+gmp|1|6.2.0|13.el9|aarch64|(none)|LGPLv3+ or GPLv2+
+gnupg2|(none)|2.3.3|4.el9|aarch64|(none)|GPLv3+
+gnutls|(none)|3.8.3|4.el9_4|aarch64|(none)|GPLv3+ and LGPLv2+
+gobject-introspection|(none)|1.68.0|11.el9|aarch64|(none)|GPLv2+ and LGPLv2+ and MIT
+gpg-pubkey|(none)|350d275d|6279464b|(none)|(none)|pubkey
+gpgme|(none)|1.15.1|6.el9|aarch64|(none)|LGPLv2+ and GPLv3+
+grep|(none)|3.6|5.el9|aarch64|(none)|GPLv3+
+gzip|(none)|1.12|1.el9|aarch64|(none)|GPLv3+ and GFDL
+json-c|(none)|0.14|11.el9|aarch64|(none)|MIT
+keyutils-libs|(none)|1.6.3|1.el9|aarch64|(none)|GPLv2+ and LGPLv2+
+krb5-libs|(none)|1.21.1|1.el9|aarch64|(none)|MIT
+langpacks-core-en|(none)|3.0|16.el9|noarch|(none)|GPLv2+
+langpacks-core-font-en|(none)|3.0|16.el9|noarch|(none)|GPLv2+
+libacl|(none)|2.3.1|4.el9|aarch64|(none)|LGPLv2+
+libarchive|(none)|3.5.3|4.el9.0.1|aarch64|(none)|BSD
+libassuan|(none)|2.5.5|3.el9|aarch64|(none)|LGPLv2+ and GPLv3+
+libattr|(none)|2.5.1|3.el9|aarch64|(none)|LGPLv2+
+libblkid|(none)|2.37.4|18.el9|aarch64|(none)|LGPLv2+
+libbrotli|(none)|1.0.9|6.el9|aarch64|(none)|MIT
+libcap-ng|(none)|0.8.2|7.el9|aarch64|(none)|LGPLv2+
+libcap|(none)|2.48|9.el9_2|aarch64|(none)|BSD or GPLv2
+libcom_err|(none)|1.46.5|5.el9|aarch64|(none)|MIT
+libcurl|(none)|7.76.1|29.el9_4|aarch64|(none)|MIT
+libdb|(none)|5.3.28|53.el9|aarch64|(none)|BSD and LGPLv2 and Sleepycat
+libdnf|(none)|0.69.0|8.el9|aarch64|(none)|LGPLv2+
+libeconf|(none)|0.4.1|3.el9_2|aarch64|(none)|MIT
+libevent|(none)|2.1.12|6.el9|aarch64|(none)|BSD and ISC
+libfdisk|(none)|2.37.4|18.el9|aarch64|(none)|LGPLv2+
+libffi|(none)|3.4.2|8.el9|aarch64|(none)|MIT
+libgcc|(none)|11.4.1|3.el9|aarch64|(none)|GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
+libgcrypt|(none)|1.10.0|10.el9_2|aarch64|(none)|LGPLv2+
+libgpg-error|(none)|1.42|5.el9|aarch64|(none)|LGPLv2+
+libidn2|(none)|2.3.0|7.el9|aarch64|(none)|(GPLv2+ or LGPLv3+) and GPLv3+
+libksba|(none)|1.5.1|6.el9_1|aarch64|(none)|(LGPLv3+ or GPLv2+) and GPLv3+
+libmodulemd|(none)|2.13.0|2.el9|aarch64|(none)|MIT
+libmount|(none)|2.37.4|18.el9|aarch64|(none)|LGPLv2+
+libnghttp2|(none)|1.43.0|5.el9_3.1|aarch64|(none)|MIT
+libpeas|(none)|1.30.0|4.el9|aarch64|(none)|LGPLv2+
+libpsl|(none)|0.21.1|5.el9|aarch64|(none)|MIT
+libpwquality|(none)|1.4.4|8.el9|aarch64|(none)|BSD or GPLv2+
+libreport-filesystem|(none)|2.15.2|6.el9.rocky.0.2|noarch|(none)|GPLv2+
+librepo|(none)|1.14.5|2.el9|aarch64|(none)|LGPLv2+
+libselinux|(none)|3.6|1.el9|aarch64|(none)|Public Domain
+libsemanage|(none)|3.6|1.el9|aarch64|(none)|LGPLv2+
+libsepol|(none)|3.6|1.el9|aarch64|(none)|LGPLv2+
+libsigsegv|(none)|2.13|4.el9|aarch64|(none)|GPLv2+
+libsmartcols|(none)|2.37.4|18.el9|aarch64|(none)|LGPLv2+
+libsolv|(none)|0.7.24|2.el9|aarch64|(none)|BSD
+libssh-config|(none)|0.10.4|13.el9|noarch|(none)|LGPLv2+
+libssh|(none)|0.10.4|13.el9|aarch64|(none)|LGPLv2+
+libstdc++|(none)|11.4.1|3.el9|aarch64|(none)|GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
+libtasn1|(none)|4.16.0|8.el9_1|aarch64|(none)|GPLv3+ and LGPLv2+
+libunistring|(none)|0.9.10|15.el9|aarch64|(none)|GPLv2+ or LGPLv3+
+libutempter|(none)|1.2.1|6.el9|aarch64|(none)|LGPLv2+
+libuuid|(none)|2.37.4|18.el9|aarch64|(none)|BSD
+libverto|(none)|0.3.2|3.el9|aarch64|(none)|MIT
+libxcrypt|(none)|4.4.18|3.el9|aarch64|(none)|LGPLv2+ and BSD and Public Domain
+libxml2|(none)|2.9.13|6.el9_4|aarch64|(none)|MIT
+libyaml|(none)|0.2.5|7.el9|aarch64|(none)|MIT
+libzstd|(none)|1.5.1|2.el9|aarch64|(none)|BSD and GPLv2
+lua-libs|(none)|5.4.4|4.el9|aarch64|(none)|MIT
+lz4-libs|(none)|1.9.3|5.el9|aarch64|(none)|GPLv2+ and BSD
+microdnf|(none)|3.9.1|3.el9|aarch64|(none)|GPLv2+
+mpfr|(none)|4.1.0|7.el9|aarch64|(none)|LGPLv3+
+ncurses-base|(none)|6.2|10.20210508.el9|noarch|(none)|MIT
+ncurses-libs|(none)|6.2|10.20210508.el9|aarch64|(none)|MIT
+nettle|(none)|3.9.1|1.el9|aarch64|(none)|LGPLv3+ or GPLv2+
+npth|(none)|1.6|8.el9|aarch64|(none)|LGPLv2+
+openldap|(none)|2.6.6|3.el9|aarch64|(none)|OLDAP-2.8
+openssl-libs|1|3.0.7|27.el9|aarch64|(none)|ASL 2.0
+openssl|1|3.0.7|27.el9|aarch64|(none)|ASL 2.0
+p11-kit-trust|(none)|0.25.3|2.el9|aarch64|(none)|BSD-3-Clause
+p11-kit|(none)|0.25.3|2.el9|aarch64|(none)|BSD-3-Clause
+pam|(none)|1.5.1|19.el9|aarch64|(none)|BSD and GPLv2+
+pcre2-syntax|(none)|10.40|5.el9|noarch|(none)|BSD
+pcre2|(none)|10.40|5.el9|aarch64|(none)|BSD
+pcre|(none)|8.44|3.el9.3|aarch64|(none)|BSD
+popt|(none)|1.18|8.el9|aarch64|(none)|MIT
+publicsuffix-list-dafsa|(none)|20210518|3.el9|noarch|(none)|MPLv2.0
+readline|(none)|8.1|4.el9|aarch64|(none)|GPLv3+
+rocky-gpg-keys|(none)|9.4|1.5.el9|noarch|(none)|BSD-3-Clause
+rocky-release|(none)|9.4|1.5.el9|noarch|(none)|BSD-3-Clause
+rocky-repos|(none)|9.4|1.5.el9|noarch|(none)|BSD-3-Clause
+rpm-libs|(none)|4.16.1.3|29.el9|aarch64|(none)|GPLv2+ and LGPLv2+ with exceptions
+rpm|(none)|4.16.1.3|29.el9|aarch64|(none)|GPLv2+
+sed|(none)|4.8|9.el9|aarch64|(none)|GPLv3+
+setup|(none)|2.13.7|10.el9|noarch|(none)|Public Domain
+shadow-utils|2|4.9|8.el9|aarch64|(none)|BSD and GPLv2+
+sqlite-libs|(none)|3.34.1|7.el9_3|aarch64|(none)|Public Domain
+systemd-libs|(none)|252|32.el9_4|aarch64|(none)|LGPLv2+ and MIT
+tzdata|(none)|2024a|1.el9|noarch|(none)|Public Domain
+util-linux-core|(none)|2.37.4|18.el9|aarch64|(none)|GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain
+util-linux|(none)|2.37.4|18.el9|aarch64|(none)|GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain
+xz-libs|(none)|5.2.5|8.el9_0|aarch64|(none)|Public Domain
+zlib|(none)|1.2.11|40.el9|aarch64|(none)|zlib and Boost

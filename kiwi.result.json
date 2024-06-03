@@ -1,0 +1,26 @@
+{
+    "container": {
+        "compress": false,
+        "filename": "/builddir/tmp/Rocky-9-Container-Minimal-9.4-20240523.0/Rocky.aarch64-9.oci.tar.xz",
+        "shasum": true,
+        "use_for_bundle": true
+    },
+    "image_changes": {
+        "compress": true,
+        "filename": "/builddir/tmp/Rocky-9-Container-Minimal-9.4-20240523.0/Rocky.aarch64-9.changes",
+        "shasum": false,
+        "use_for_bundle": true
+    },
+    "image_packages": {
+        "compress": false,
+        "filename": "/builddir/tmp/Rocky-9-Container-Minimal-9.4-20240523.0/Rocky.aarch64-9.packages",
+        "shasum": false,
+        "use_for_bundle": true
+    },
+    "image_verified": {
+        "compress": false,
+        "filename": "/builddir/tmp/Rocky-9-Container-Minimal-9.4-20240523.0/Rocky.aarch64-9.verified",
+        "shasum": false,
+        "use_for_bundle": true
+    }
+}
