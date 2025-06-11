@@ -65,7 +65,7 @@ generate-filelist() {
 
 latest-build() {
   local path=$(printf "s3://resf-empanadas/buildimage-%s-%s/Rocky-%s-Container-%s-%s-%s.%s.%s" $version $arch $major $type $version $date $revision $arch)
-  local res=$(log-cmd aws --region us-east-2 --profile resf-peridot-prod s3 ls --recursive "$path" | sort | tail -1 | awk '{print $4}' | sed 's,^\(.*\)/.*$,\1,g')
+  local res=$(log-cmd aws --region us-east-2 --profile peridot-prod s3 ls --recursive "$path" | sort | tail -1 | awk '{print $4}' | sed 's,^\(.*\)/.*$,\1,g')
   echo "$res"
   return 0
 }

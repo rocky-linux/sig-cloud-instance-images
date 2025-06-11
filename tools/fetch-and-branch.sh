@@ -32,8 +32,21 @@ build-container-manifests() {
     *) echo "invalid arch"; exit;;
   esac
 
-  # don't bother tagging the  intermediary container as we will just capture its shasum
-  container_shasum=$(podman build -q $build_args .)
+  if [[ -f kiwi.result.json ]]; then
+    log "found kiwi image"
+    oci="$(find "$PWD" -maxdepth 1 -type f -name '*.oci')"
+    if [[ ! -f "${oci}" ]]; then
+      log "could not find OCI image. Aborting"
+      exit 2
+    fi
+    container_shasum="$(tar -tvf $oci | sort -k3 -nr | head -n2 | tail -1 | awk '{print $NF}' | xargs basename)"
+    log-cmd podman load -i $oci
+  else
+    # don't bother tagging the  intermediary container as we will just capture its shasum
+    container_shasum="$(podman build -q $build_args .)"
+  fi
+
+  image_source="containers-storage:${container_shasum}"
   pRes=$?
   if [[ $pRes -gt 0 ]]; then
     echo "failed to build container. exiting"
@@ -42,7 +55,8 @@ build-container-manifests() {
 
   # Manifest tags need one per type (base/minimal/etc), and contain two architectures (for 8, 9 will ultimately have 4+)
   if ! podman manifest exists "$manifest_tag"; then
-    podman manifest create "$manifest_tag"
+    log "Creating manifest $manifest_tag"
+    log-cmd podman manifest create "$manifest_tag"
     pRes=$?
     if [[ $pRes -gt 0 ]]; then
       echo "Failed to create manifest"
@@ -52,7 +66,8 @@ build-container-manifests() {
     echo "manifest exists. adding will overwrite existing platform tuple in manifest, if exists."
   fi
 
-  podman manifest add $manifest_tag containers-storage:$container_shasum $build_args
+  log "Adding $image_source to $manifest_tag with $build_args"
+  log-cmd podman manifest add $manifest_tag $image_source $build_args
   pRes=$?
   if [[ $pRes -gt 0 ]]; then
     echo "Failed to add container image to manifest"
@@ -107,14 +122,26 @@ check-and-download (){
     exit 3
   fi
 
-  log-cmd aws --region us-east-2 --profile resf-peridot-prod s3 sync "s3://resf-empanadas/$builddir" $PWD
+  log-cmd aws --region us-east-2 --profile peridot-prod s3 sync "s3://resf-empanadas/$builddir" $PWD
 
   generate-packagelist
   generate-filelist
+
 }
 
 check-and-download
 build-container-manifests
+
+
+# for kiwi images we just want to rename the tar to layer.tar.xz
+tarball="$(find "$PWD" -maxdepth 1 -type f -name '*.tar.xz')"
+if [[ ! -f "${tarball}" ]]; then
+  log "could not find tarball image. Aborting"
+  exit 2
+else 
+  mv $tarball layer.tar.xz
+  rm ./*.oci
+fi
 
 git add .
 git commit -S -m "Rocky Linux Container Image - $branch"

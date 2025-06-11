@@ -19,7 +19,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/common.sh"
 name="Rocky-${version}.${date}-${type}"
 
 arches=(x86_64 aarch64)
-set -x
+#set -x
 if [[ $major -ge 9 ]]; then
 	arches=(${arches[@]} s390x ppc64le)
 fi
