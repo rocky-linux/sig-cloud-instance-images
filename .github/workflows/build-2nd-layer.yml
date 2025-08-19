@@ -17,6 +17,8 @@ jobs:
             arch: 'amd64, arm64'
           - major: 9
             arch: 'amd64, arm64, ppc64le, s390x'
+          - major: 10
+            arch: 'amd64, arm64, ppc64le, s390x'
         type:
           - micro
           - init
