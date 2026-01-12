@@ -64,12 +64,31 @@ generate-filelist() {
 }
 
 latest-build() {
-  local path=$(printf "s3://resf-empanadas/buildimage-%s-%s/Rocky-%s-Container-%s-%s-%s.%s.%s" $version $arch $major $type $version $date $revision $arch)
-  local res=$(log-cmd aws --region us-east-2 --profile peridot-prod s3 ls --recursive "$path" | sort | tail -1 | awk '{print $4}' | sed 's,^\(.*\)/.*$,\1,g')
-  echo "$res"
+  case $version in
+  8|9)
+    local path=$(printf "s3://resf-empanadas/buildimage-%s-%s/Rocky-%s-Container-%s-%s-%s.%s.%s" $version $arch $major $type $version $date $revision $arch)
+    local res=$(log-cmd aws --region us-east-2 --profile peridot-prod s3 ls --recursive "$path" | sort | tail -1 | awk '{print $4}' | sed 's,^\(.*\)/.*$,\1,g')
+    echo "$res"
+    ;;
+  *)
+    printf "rsync://msync.rockylinux.org/rocky-staging/%s/images/%s/Rocky-%s-Container-%s-%s-%s.%s.%s.oci.tar.xz" $version $arch $major $type $version $date $revision $arch
+    ;;
+  esac
+  return 0
+}
+
+latest-build-name() {
+  case $version in
+  8|9)
+    printf "Rocky-%s-Container-%s-%s-%s.%s.%s" $major $type $version $date $revision $arch
+    ;;
+  *)
+    printf "Rocky-%s-Container-%s-%s-%s.%s.%s.oci.tar.xz" $major $type $version $date $revision $arch
+    ;;
+  esac
   return 0
 }
 
 pattern=$(printf "Rocky-%s.%s-%s-%s" "$version" "$date" "$type" "$arch")
-manifest_tag="$(printf "localhost/rocky/%s/%s/%s:latest" $version $date $type)"
+manifest_tag="$(printf "localhost/rocky/%s/%s/%s:latest" $version $tagdate $type)"
 manifest_tag="${manifest_tag,,}" # convert to lowercase

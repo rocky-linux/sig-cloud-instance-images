@@ -5,15 +5,19 @@ type=${2}
 arch=${3}
 date=${4:-$(date +%Y%m%d)}
 revision=${5:-0}
+tagdate=${TAGDATE:-date}
 
-major=${1:0:1}
-minor=${1:2:1}
+major=${version%%.*}
+rest=${version#*.}
+minor=${rest%%.*}
 TEMPLATE="library-template"
 
 usage() {
   printf "%s: RELEASE TYPE ARCH [DATE]\n\n" $0
   log "$1"
 }
+
+KIWI=false
 
 # shellcheck disable=SC2046,1091,1090
 source "$(dirname "${BASH_SOURCE[0]}")/common.sh"
@@ -29,12 +33,14 @@ build-container-manifests() {
       build_args="--os linux --arch s390x" ;;
     ppc64le)
       build_args="--os linux --arch ppc64le" ;;
+    riscv64)
+      build_args="--os linux --arch riscv64" ;;
     *) echo "invalid arch"; exit;;
   esac
 
-  if [[ -f kiwi.result.json ]]; then
+  if [[ -f kiwi.result.json || $KIWI ]]; then
     log "found kiwi image"
-    oci="$(find "$PWD" -maxdepth 1 -type f -name '*.oci')"
+    oci="$(find "$PWD" -maxdepth 1 -type f -name '*.oci*')"
     if [[ ! -f "${oci}" ]]; then
       log "could not find OCI image. Aborting"
       exit 2
@@ -83,7 +89,7 @@ build-container-manifests() {
 
 manifest-push-commands (){
   local destinations=("docker.io/rockylinux/rockylinux" "quay.io/rockylinux/rockylinux")
-  local tags=("$version" "${version}.${date}")
+  local tags=("$version" "${version}.${tagdate}")
   local final_tags=()
   for d in "${destinations[@]}"; do
     for t in "${tags[@]}"; do
@@ -122,13 +128,25 @@ check-and-download (){
     exit 3
   fi
 
-  log-cmd aws --region us-east-2 --profile peridot-prod s3 sync "s3://resf-empanadas/$builddir" $PWD
+  case $version in
+    8|9)
+      log-cmd aws --region us-east-2 --profile peridot-prod s3 sync "s3://resf-empanadas/$builddir" $PWD
+      ;;
+    *)
+      KIWI=true
+      until [[ -f "$(latest-build-name)" ]]; do
+        log-cmd rsync -av "$builddir" .
+        sleep 1;
+      done
+      ;;
+  esac
 
   generate-packagelist
   generate-filelist
 
 }
 
+rm ./*.oci*
 check-and-download
 build-container-manifests
 
@@ -140,7 +158,7 @@ if [[ ! -f "${tarball}" ]]; then
   exit 2
 else 
   mv $tarball layer.tar.xz
-  rm ./*.oci
+  rm ./*.oci*
 fi
 
 git add .
