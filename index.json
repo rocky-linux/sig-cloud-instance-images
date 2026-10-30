@@ -1,0 +1,1 @@
+{"schemaVersion":2,"mediaType":"application/vnd.oci.image.index.v1+json","manifests":[{"mediaType":"application/vnd.oci.image.manifest.v1+json","digest":"sha256:b748cbd3d94a28acd9ea48590c8e1f49c7ccf2207dd5c2326c46a312acdbd510","size":573,"annotations":{"org.opencontainers.image.ref.name":"rockylinux:10-minimal"}}]}
