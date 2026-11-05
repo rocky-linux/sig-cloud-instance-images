@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test the image build
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
 
       - name: Install QEMU support
         run: |
@@ -35,7 +35,7 @@ jobs:
           sudo apt-get install -y qemu-user-binfmt
 
       - name: Build image
-        uses: redhat-actions/buildah-build@v2
+        uses: redhat-actions/buildah-build@v3
         id: build-image
         with:
           archs: ${{ matrix.version.arch }}
