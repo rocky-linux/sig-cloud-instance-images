@@ -34,10 +34,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install qemu dependency
+      - name: Install QEMU support
         run: |
           sudo apt-get update
-          sudo apt-get install -y qemu-user-static
+          sudo apt-get install -y qemu-user-binfmt
 
       - name: Setup Registry login
         uses: redhat-actions/podman-login@v1
