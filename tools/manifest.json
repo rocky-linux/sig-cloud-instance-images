@@ -1,0 +1,184 @@
+{
+  "maintainers": [
+    "Rocky Enterprise Software Foundation <infrastructure@rockylinux.org> (@rocky-linux)",
+    "Brian Clemens <brian@resf.org> (@brianclemens)"
+  ],
+  "repo": "https://github.com/rocky-linux/sig-cloud-instance-images.git",
+  "defaultBranch": "main",
+  "defaultCommit": "e5f9bd99456114b20c1b4e14d386ca360e7facc5",
+  "entries": [
+    {
+      "tags": [
+        "10.3.20261112",
+        "10.3",
+        "10",
+        "latest"
+      ],
+      "arches": [
+        {
+          "arch": "x86_64",
+          "branch": "Rocky-10.3.20261112-Base-x86_64",
+          "commit": "e97a0074c037152e4950ac634fdd224d621f582c"
+        },
+        {
+          "arch": "aarch64",
+          "branch": "Rocky-10.3.20261112-Base-aarch64",
+          "commit": "71cd9a3855e4cf26669306f7c67054dba4fd8bff"
+        },
+        {
+          "arch": "ppc64le",
+          "branch": "Rocky-10.3.20261112-Base-ppc64le",
+          "commit": "d3ebc20d57fdd203a94cf9bf197a86ff83fd3fed"
+        },
+        {
+          "arch": "s390x",
+          "branch": "Rocky-10.3.20261112-Base-s390x",
+          "commit": "2d438d2e6bec5bcaee3ac51a53f9cc430a72279b"
+        },
+        {
+          "arch": "riscv64",
+          "branch": "Rocky-10.3.20261112-Base-riscv64",
+          "commit": "e65440da10ccbff8d1c24f17ef9567aaa984f7ca"
+        }
+      ],
+      "builder": "oci-import",
+      "file": "index.json"
+    },
+    {
+      "tags": [
+        "10.3.20261112-minimal",
+        "10.3-minimal",
+        "10-minimal"
+      ],
+      "arches": [
+        {
+          "arch": "x86_64",
+          "branch": "Rocky-10.3.20261112-Minimal-x86_64",
+          "commit": "14e1052600daaf146ad8036405fdedf2384dc5e2"
+        },
+        {
+          "arch": "aarch64",
+          "branch": "Rocky-10.3.20261112-Minimal-aarch64",
+          "commit": "f1a8562daa1469b384e20d1a5b939aa2564732a8"
+        },
+        {
+          "arch": "ppc64le",
+          "branch": "Rocky-10.3.20261112-Minimal-ppc64le",
+          "commit": "d11dd41b3d65c73459097653ea6b580c31a3540e"
+        },
+        {
+          "arch": "s390x",
+          "branch": "Rocky-10.3.20261112-Minimal-s390x",
+          "commit": "13a25c8598475dcc7b7ea418a1f50f78706d5c99"
+        },
+        {
+          "arch": "riscv64",
+          "branch": "Rocky-10.3.20261112-Minimal-riscv64",
+          "commit": "0e8ecef2a77d7cdaae5ed3c9a74d57b05c253fe1"
+        }
+      ],
+      "builder": "oci-import",
+      "file": "index.json"
+    },
+    {
+      "tags": [
+        "9.9.20261112",
+        "9.9",
+        "9"
+      ],
+      "arches": [
+        {
+          "arch": "x86_64",
+          "branch": "Rocky-9.9.20261112-Base-x86_64",
+          "commit": "411d43c7f31cda939bedd8de3ef2bcc1110bb8f9"
+        },
+        {
+          "arch": "aarch64",
+          "branch": "Rocky-9.9.20261112-Base-aarch64",
+          "commit": "8de5a85baf5d22d448122c13bdd9007c8159b3c0"
+        },
+        {
+          "arch": "ppc64le",
+          "branch": "Rocky-9.9.20261112-Base-ppc64le",
+          "commit": "ed44b4aff68a136a9fe6c8a6af6eeab684e9fb40"
+        },
+        {
+          "arch": "s390x",
+          "branch": "Rocky-9.9.20261112-Base-s390x",
+          "commit": "77f728cf80e38b09503aa17ee1b7f3333f7a5bc2"
+        }
+      ],
+      "builder": "oci-import",
+      "file": "index.json"
+    },
+    {
+      "tags": [
+        "9.9.20261112-minimal",
+        "9.9-minimal",
+        "9-minimal"
+      ],
+      "arches": [
+        {
+          "arch": "x86_64",
+          "branch": "Rocky-9.9.20261112-Minimal-x86_64",
+          "commit": "7c4576898bc0addd63f98e887d5899df984ceb17"
+        },
+        {
+          "arch": "aarch64",
+          "branch": "Rocky-9.9.20261112-Minimal-aarch64",
+          "commit": "b3d87a64749a08a6518ae7d4238fcc70a8f96b18"
+        },
+        {
+          "arch": "ppc64le",
+          "branch": "Rocky-9.9.20261112-Minimal-ppc64le",
+          "commit": "cd5075d25017b836b5a515b8798952459bd697f1"
+        },
+        {
+          "arch": "s390x",
+          "branch": "Rocky-9.9.20261112-Minimal-s390x",
+          "commit": "696ffd08b631eeac3d8c2b69b58289b41bbce50b"
+        }
+      ],
+      "builder": "oci-import",
+      "file": "index.json"
+    },
+    {
+      "tags": [
+        "8.10.20240528",
+        "8.10",
+        "8"
+      ],
+      "arches": [
+        {
+          "arch": "x86_64",
+          "branch": "Rocky-8.10.20240528-Base-x86_64",
+          "commit": "a344458c7c810d02f7a1ee370ed065160caa9ed7"
+        },
+        {
+          "arch": "aarch64",
+          "branch": "Rocky-8.10.20240528-Base-aarch64",
+          "commit": "d8ca4fe65ca52d5c26b5a51f580c6d1e50962778"
+        }
+      ]
+    },
+    {
+      "tags": [
+        "8.10.20240528-minimal",
+        "8.10-minimal",
+        "8-minimal"
+      ],
+      "arches": [
+        {
+          "arch": "x86_64",
+          "branch": "Rocky-8.10.20240528-Minimal-x86_64",
+          "commit": "27400c231e2095ac005f2e14b86eeb79dd147912"
+        },
+        {
+          "arch": "aarch64",
+          "branch": "Rocky-8.10.20240528-Minimal-aarch64",
+          "commit": "360b8f7691db8eaebf715013dccdf05d8efe239a"
+        }
+      ]
+    }
+  ]
+}
