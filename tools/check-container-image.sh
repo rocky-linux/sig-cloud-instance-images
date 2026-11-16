@@ -16,12 +16,11 @@ SCRNAME="$(basename "$0")"
 # stay well under so a point release does not silently cross the line.
 MAX_BLOB_BYTES=$((95 * 1000 * 1000))
 
-# 8.10 (old kickstart pipeline) shipped ~8 locale files. Anything near the
-# thousands means locale filtering regressed again.
+# The image descriptions prune locales, but the prune is guarded on
+# $kiwi_profiles and fails silently if that stops matching.
 MAX_LOCALE_FILES=50
 
 ARCH=""
-FILELIST=""
 KEEP_WORKDIR=0
 
 usage() {
@@ -37,8 +36,6 @@ Options:
                         omitted.
   -m, --max-bytes N     maximum size of any single blob (default: $MAX_BLOB_BYTES)
   -l, --max-locale N    maximum files under usr/share/locale (default: $MAX_LOCALE_FILES)
-  -f, --filelist PATH   write the sorted layer file list here (default: alongside
-                        PATH as filelist.txt)
   -k, --keep            keep the temporary working directory
   -h, --help
 
@@ -54,15 +51,14 @@ head2() { printf '\n== %s\n' "$1"; }
 FAILURES=0
 WARNINGS=0
 
-OPTS=$(getopt -a -n "$SCRNAME" -o a:,m:,l:,f:,k,h \
-  -l arch:,max-bytes:,max-locale:,filelist:,keep,help -- "$@") || { usage; exit 2; }
+OPTS=$(getopt -a -n "$SCRNAME" -o a:,m:,l:,k,h \
+  -l arch:,max-bytes:,max-locale:,keep,help -- "$@") || { usage; exit 2; }
 eval set -- "$OPTS"
 while :; do
   case "$1" in
     -a | --arch)       ARCH="$2"             ; shift 2 ;;
     -m | --max-bytes)  MAX_BLOB_BYTES="$2"   ; shift 2 ;;
     -l | --max-locale) MAX_LOCALE_FILES="$2" ; shift 2 ;;
-    -f | --filelist)   FILELIST="$2"         ; shift 2 ;;
     -k | --keep)       KEEP_WORKDIR=1        ; shift   ;;
     -h | --help)       usage; exit 0 ;;
     --) shift; break ;;
@@ -110,14 +106,10 @@ trap cleanup EXIT
 
 if [[ -d "$TARGET" ]]; then
   LAYOUT="$TARGET"
-  # Deliberately not inside the layout: an oci-import branch tree must contain
-  # exactly oci-layout, index.json and blobs/, and nothing else.
-  [[ -n "$FILELIST" ]] || FILELIST="$PWD/$(basename "${TARGET%/}").filelist.txt"
 else
   log "Extracting $(basename "$TARGET")"
   tar -xf "$TARGET" -C "$WORKDIR" || { log "Extraction failed"; exit 2; }
   LAYOUT="$WORKDIR"
-  [[ -n "$FILELIST" ]] || FILELIST="$(dirname "$TARGET")/filelist.txt"
 fi
 
 printf '%s\n' "Checking $(basename "$TARGET") as ${BASHBREW_ARCH}"
@@ -269,6 +261,9 @@ else
 fi
 
 # --- layer contents --------------------------------------------------------
+# The image descriptions already handle all of this. These are regression
+# guards: every one of them is conditional on something that can stop matching
+# without erroring, which is how the locale bug went unnoticed.
 head2 "Layer contents"
 
 LAYER="$LAYOUT/blobs/sha256/$(jq -r '.layers[0].digest' "$MANIFEST" | sed 's/^sha256://')"
@@ -280,8 +275,6 @@ fi
 sort "$LISTING" -o "$LISTING"
 log "layer holds $(wc -l < "$LISTING") entries"
 
-# Paths that must never ship. KIWI build residue, WSL-only config that leaked
-# out of the shared overlay, and bootloader config that is meaningless here.
 forbidden=(
   '^\.profile$'
   '^\.kconfig$'
@@ -302,7 +295,6 @@ for pattern in "${forbidden[@]}"; do
 done
 [[ "$found_forbidden" -eq 0 ]] && pass "no forbidden paths"
 
-# /dev must exist but stay empty; the runtime mounts over it.
 if grep -qE '^dev/$' "$LISTING"; then
   dev_entries="$(grep -cE '^dev/.+' "$LISTING")"
   if [[ "$dev_entries" -eq 0 ]]; then
@@ -314,8 +306,6 @@ else
   fail "dev/ is missing"
 fi
 
-# An empty machine-id is correct for a container: systemd and dbus regenerate it
-# per-instance. A populated one would make every container share an identity.
 if grep -qE '^etc/machine-id$' "$LISTING"; then
   mid_size="$(tar -tvzf "$LAYER" etc/machine-id 2>/dev/null | awk '{print $3}' | head -1)"
   if [[ "${mid_size:-0}" == "0" ]]; then
@@ -332,13 +322,6 @@ if [[ "$locale_files" -le "$MAX_LOCALE_FILES" ]]; then
   pass "usr/share/locale holds ${locale_files} files (limit ${MAX_LOCALE_FILES})"
 else
   fail "usr/share/locale holds ${locale_files} files, over the ${MAX_LOCALE_FILES} limit — rpm locale filtering is not in effect"
-fi
-
-# --- filelist --------------------------------------------------------------
-if cp "$LISTING" "$FILELIST" 2>/dev/null; then
-  log "Wrote file list to ${FILELIST}"
-else
-  warn "could not write file list to ${FILELIST}"
 fi
 
 # --- summary ---------------------------------------------------------------

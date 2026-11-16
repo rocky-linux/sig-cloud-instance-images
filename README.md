@@ -70,22 +70,29 @@ points at the newest major.
 
 ### check-container-image.sh
 
-Validates a `.oci.tar.xz` or an extracted layout:
+Validates a `.oci.tar.xz` or an extracted layout. Exits non-zero on any failure.
 
-- exactly `oci-layout`, `index.json`, `blobs/sha256/`
-- one manifest, one `tar+gzip` layer, every blob's digest matching its filename,
-  no unreferenced blobs
-- every blob under 95MB (GitHub hard-blocks at 100MiB and Git LFS is not an
-  option, since bashbrew fetches plain git objects)
+Nothing upstream enforces these three, and a failure here is not visible until
+Docker Hub rejects the branch or publishes a broken manifest:
+
+- every blob under 95MB. GitHub hard-blocks at 100MiB, and Git LFS is not an
+  option since bashbrew fetches plain git objects. Layers grow roughly 1.2MB per
+  point release
 - `os`, `architecture` and `variant` matching the expected arch. Only the config
-  blob counts here; a registry manifest list can disagree with it
+  blob counts; a registry manifest list can disagree with it
+- exactly `oci-layout`, `index.json` and `blobs/sha256/`, one manifest, one
+  `tar+gzip` layer, digests matching filenames, no unreferenced blobs
+
+The rest are regression guards. The image descriptions handle them, but each is
+conditional on something that can stop matching without erroring — the locale
+prune is guarded on `$kiwi_profiles`, which is how the original bug went
+unnoticed:
+
 - `config.Cmd` is `["/bin/bash"]`
 - no `.profile`, `.kconfig`, `image/`, `lost+found/`, `etc/default/grub`,
   `etc/wsl*.conf`, `var/log/dnf*` or `var/log/hawkey.log`
 - `dev/` present and empty, `etc/machine-id` absent or zero bytes,
   `usr/share/locale` under 50 files
-
-It writes a sorted `filelist.txt`, and exits non-zero on any failure.
 
 ## Second-layer images
 

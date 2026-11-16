@@ -78,7 +78,7 @@ for artifact in "$@"; do
   log "=== $name"
   log "    branch ${branch}"
 
-  "$CHECKER" -a "$arch" -f /dev/null "$artifact" >/dev/null 2>&1 \
+  "$CHECKER" -a "$arch" "$artifact" >/dev/null 2>&1 \
     || die "$name failed validation; refusing to branch it"
   log "    checker passed"
 
