@@ -241,11 +241,10 @@ jq -r '.config.Labels // {} | to_entries[] | "    \(.key)=\(.value)"' "$CONFIG"
 printf '\n'
 
 # kiwi defaults to buildah for the oci archive and buildah stamps its own
-# version in. Only changeable via kiwi's runtime config (oci/archive_tool:
-# umoci), which lives in the build environment rather than the image
-# description, so this is a note rather than a gate.
+# version in. Dropping it means switching kiwi to umoci, which is EPEL-only,
+# pre-1.0 and not packaged for 8, so it stays. Noted, not gated.
 if jq -e '.config.Labels | has("io.buildah.version")' "$CONFIG" >/dev/null 2>&1; then
-  warn "label io.buildah.version leaks the build tool; set kiwi's oci/archive_tool to umoci to drop it"
+  warn "label io.buildah.version is injected by buildah and inherits downstream"
 else
   pass "no build-tool labels"
 fi
